@@ -23,15 +23,15 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16 md:h-20 px-4">
+        <div className="flex items-center justify-between h-14 md:h-16 lg:h-20 px-3 md:px-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl gradient-hero flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
               <Car className="w-6 h-6 md:w-7 md:h-7 text-white" />
             </div>
-            <div className="hidden sm:block">
-              <h1 className="font-bold text-lg md:text-xl text-foreground leading-tight">Murugan Driving </h1>
-              <p className="text-xs text-muted-foreground -mt-0.5">Institute</p>
+            <div>
+              <h1 className="font-bold text-base md:text-lg lg:text-xl text-foreground leading-tight">{t('brand.name')}</h1>
+              <p className="text-[10px] md:text-xs text-muted-foreground -mt-0.5">{t('brand.institute')}</p>
             </div>
           </Link>
 

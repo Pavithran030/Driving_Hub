@@ -10,18 +10,23 @@ interface LanguageContextType {
 
 const translations: Record<Language, Record<string, string>> = {
   en: {
+    // Brand
+    'brand.name': 'Murugan Driving',
+    'brand.institute': 'Institute',
+    'brand.full': 'Murugan Driving Institute',
+
     // Navigation
     'nav.home': 'Home',
     'nav.about': 'About',
     'nav.services': 'Courses & Services',
-    'nav.stories': 'Student Stories',
+    'nav.stories': 'Gallery',
     'nav.contact': 'Contact',
     'nav.alumni': 'Alumni',
     'nav.callNow': 'Call Now',
     'nav.whatsapp': 'WhatsApp',
 
     // Hero
-    'hero.title': 'Beginner Driving Classes, Licence & RC Renewal in Salem',
+    'hero.title': 'Beginner Driving Classes, Licence & RC Renewal in Omalur',
     'hero.subtitle': 'We train complete beginners with confidence, help you clear RTO tests, and handle licence and RC renewal paperwork for you.',
     'hero.callWhatsapp': 'Call / WhatsApp Now',
     'hero.bookDemo': 'Book a Demo Class',
@@ -29,11 +34,11 @@ const translations: Record<Language, Record<string, string>> = {
     // Services
     'services.title': 'Our Services',
     'services.subtitle': 'Complete driving education and RTO documentation support',
-    'services.driving.title': 'Beginner Car Driving Classes',
+    'services.driving.title': 'Light Vehicle Training (Car)',
     'services.driving.desc': 'Learn to drive with confidence. Complete training for absolute beginners.',
-    'services.twowheeler.title': 'Two-Wheeler Training',
-    'services.twowheeler.desc': 'Safe and professional two-wheeler driving lessons.',
-    'services.licence.title': 'Licence Services',
+    'services.heavyvehicle.title': 'Heavy Vehicle Training (Truck/Lorry)',
+    'services.heavyvehicle.desc': 'Professional commercial vehicle training for truck and lorry drivers.',
+    'services.licence.title': 'All Vehicle Licence Services',
     'services.licence.desc': 'Learner, permanent, renewal, and all licence-related support.',
     'services.rc.title': 'RC Renewal & Paperwork',
     'services.rc.desc': 'Vehicle RC renewal, address change, and documentation assistance.',
@@ -49,15 +54,13 @@ const translations: Record<Language, Record<string, string>> = {
     'why.safety.desc': 'Safe training with dual-control vehicles and experienced instructors.',
     'why.flexible': 'Flexible Timings',
     'why.flexible.desc': 'Morning, evening, and weekend classes available.',
-    'why.pickup': 'Pick-up & Drop',
-    'why.pickup.desc': 'Convenient pick-up service from your home or nearby locations.',
     'why.friendly': 'Friendly Trainers',
     'why.friendly.desc': 'Patient instructors, especially for nervous learners and women.',
 
     // Testimonials
     'testimonials.title': 'What Our Students Say',
     'testimonials.subtitle': 'Real experiences from our satisfied learners',
-    'testimonials.viewAll': 'View All Stories',
+    'testimonials.viewAll': 'View Gallery',
 
     // CTA
     'cta.title': 'Ready to Start Your Driving Journey?',
@@ -91,9 +94,9 @@ const translations: Record<Language, Record<string, string>> = {
     'courses.refresher.title': 'Refresher Course',
     'courses.refresher.for': 'For licence holders who need to regain confidence',
     'courses.refresher.duration': '7 days • 1 hour daily',
-    'courses.twowheeler.title': 'Two-Wheeler Training',
-    'courses.twowheeler.for': 'For beginners learning scooter or motorcycle',
-    'courses.twowheeler.duration': '5 days • 45 minutes daily',
+    'courses.heavyvehicle.title': 'Heavy Vehicle Training Course',
+    'courses.heavyvehicle.for': 'For those learning commercial truck/lorry driving',
+    'courses.heavyvehicle.duration': '21 days • 1.5 hours daily',
     'courses.learn': 'What You Will Learn',
     'courses.enquire': 'Enquire Now',
 
@@ -126,9 +129,9 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.form.success': 'Thank you! We will contact you soon.',
     'contact.location': 'Our Location',
 
-    // Student Stories
-    'stories.title': 'Student Stories',
-    'stories.subtitle': 'See what our students have achieved',
+    // Gallery
+    'stories.title': 'Gallery',
+    'stories.subtitle': 'Photos and achievements of our students',
     'stories.gallery': 'Photo Gallery',
     'stories.testimonials': 'Student Testimonials',
     'stories.share': 'Share Your Story',
@@ -146,11 +149,16 @@ const translations: Record<Language, Record<string, string>> = {
     'common.getStarted': 'Get Started',
   },
   ta: {
+    // Brand
+    'brand.name': 'முருகன் டிரைவிங்',
+    'brand.institute': 'நிறுவனம்',
+    'brand.full': 'முருகன் டிரைவிங் நிறுவனம்',
+
     // Navigation
     'nav.home': 'முகப்பு',
     'nav.about': 'எங்களைப் பற்றி',
     'nav.services': 'படிப்புகள் & சேவைகள்',
-    'nav.stories': 'மாணவர் அனுபவங்கள்',
+    'nav.stories': 'கேலரி',
     'nav.contact': 'தொடர்புகொள்ள',
     'nav.alumni': 'முன்னாள் மாணவர்கள்',
     'nav.callNow': 'அழைக்கவும்',
@@ -165,12 +173,12 @@ const translations: Record<Language, Record<string, string>> = {
     // Services
     'services.title': 'எங்கள் சேவைகள்',
     'services.subtitle': 'முழுமையான வாகன பயிற்சி மற்றும் RTO ஆவண உதவி',
-    'services.driving.title': 'ஆரம்ப கார் பயிற்சி',
+    'services.driving.title': 'இலகு வாகன பயிற்சி (கார்)',
     'services.driving.desc': 'தன்னம்பிக்கையுடன் வாகனம் ஓட்ட கற்றுக்கொள்ளுங்கள்.',
-    'services.twowheeler.title': 'இரு சக்கர வாகன பயிற்சி',
-    'services.twowheeler.desc': 'பாதுகாப்பான இரு சக்கர வாகன பயிற்சி.',
-    'services.licence.title': 'உரிம சேவைகள்',
-    'services.licence.desc': 'கற்றல், நிரந்தர, புதுப்பித்தல் உரிம உதவி.',
+    'services.heavyvehicle.title': 'கனரக வாகன பயிற்சி (லாரி/டிரக்)',
+    'services.heavyvehicle.desc': 'லாரி மற்றும் டிரக் ஓட்டுநர்களுக்கான நிபுண வணிக வாகன பயிற்சி.',
+    'services.licence.title': 'அனைத்து வாகன உரிம சேவைகள்',
+    'services.licence.desc': 'அனைத்து வகை வாகனங்களுக்கும் (இரு சக்கரம், கார், கனரக வாகனம்) உரிம உதவி.',
     'services.rc.title': 'RC புதுப்பித்தல் & ஆவணங்கள்',
     'services.rc.desc': 'வாகன RC புதுப்பித்தல் மற்றும் முகவரி மாற்றம்.',
 
@@ -193,7 +201,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Testimonials
     'testimonials.title': 'மாணவர்கள் என்ன சொல்கிறார்கள்',
     'testimonials.subtitle': 'திருப்தியான மாணவர்களின் உண்மையான அனுபவங்கள்',
-    'testimonials.viewAll': 'அனைத்து கதைகளையும் பார்க்க',
+    'testimonials.viewAll': 'கேலரியைப் பார்க்க',
 
     // CTA
     'cta.title': 'உங்கள் வாகன பயணத்தை தொடங்க தயாரா?',
@@ -227,9 +235,9 @@ const translations: Record<Language, Record<string, string>> = {
     'courses.refresher.title': 'ரிஃப்ரஷர் படிப்பு',
     'courses.refresher.for': 'தன்னம்பிக்கையை மீட்க வேண்டிய உரிம வைத்திருப்பவர்களுக்கு',
     'courses.refresher.duration': '7 நாட்கள் • தினமும் 1 மணி நேரம்',
-    'courses.twowheeler.title': 'இரு சக்கர வாகன பயிற்சி',
-    'courses.twowheeler.for': 'ஸ்கூட்டர் அல்லது மோட்டார் சைக்கிள் கற்க விரும்புபவர்களுக்கு',
-    'courses.twowheeler.duration': '5 நாட்கள் • தினமும் 45 நிமிடங்கள்',
+    'courses.heavyvehicle.title': 'கனரக வாகன பயிற்சி படிப்பு',
+    'courses.heavyvehicle.for': 'வணிக லாரி/டிரக் ஓட்டுதல் கற்கும் விரும்புபவர்களுக்கு',
+    'courses.heavyvehicle.duration': '21 நாட்கள் • தினமும் 1.5 மணி நேரம்',
     'courses.learn': 'நீங்கள் கற்றுக்கொள்வது',
     'courses.enquire': 'இப்போது விசாரிக்கவும்',
 
@@ -262,9 +270,9 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.form.success': 'நன்றி! நாங்கள் விரைவில் உங்களை தொடர்பு கொள்வோம்.',
     'contact.location': 'எங்கள் இருப்பிடம்',
 
-    // Student Stories
-    'stories.title': 'மாணவர் கதைகள்',
-    'stories.subtitle': 'எங்கள் மாணவர்கள் சாதித்ததைப் பாருங்கள்',
+    // Gallery
+    'stories.title': 'கேலரி',
+    'stories.subtitle': 'எங்கள் மாணவர்களின் புகைப்படங்கள் மற்றும் சாதனைகள்',
     'stories.gallery': 'புகைப்பட தொகுப்பு',
     'stories.testimonials': 'மாணவர் சான்றுகள்',
     'stories.share': 'உங்கள் கதையை பகிரவும்',

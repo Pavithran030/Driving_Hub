@@ -8,16 +8,16 @@ const Footer = () => {
   return (
     <footer className="bg-foreground text-background">
       <div className="container-custom py-8 md:py-12 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8">
           {/* About */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-3">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-xl gradient-hero flex items-center justify-center">
                 <Car className="w-7 h-7 text-white" />
               </div>
               <div>
-                <h3 className="font-bold text-lg">Murugan Driving </h3>
-                <p className="text-sm text-background/70">Institute</p>
+                <h3 className="font-bold text-lg">{t('brand.name')}</h3>
+                <p className="text-sm text-background/70">{t('brand.institute')}</p>
               </div>
             </div>
             <p className="text-background/80 text-sm leading-relaxed">
@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-2">
             <h4 className="font-semibold text-lg">Quick Links</h4>
             <nav className="space-y-2">
               <Link to="/" className="block text-background/80 hover:text-background transition-colors text-sm">
@@ -60,7 +60,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-4">
             <h4 className="font-semibold text-lg">{t('contact.title')}</h4>
             <div className="space-y-3">
               <a href="tel:+919876543210" className="flex items-start gap-3 text-background/80 hover:text-background transition-colors text-sm">
@@ -73,36 +73,57 @@ const Footer = () => {
               </a>
               <div className="flex items-start gap-3 text-background/80 text-sm">
                 <MapPin className="w-5 h-5 mt-0.5 shrink-0" />
-                <span>123 Main Road, Near Bus Stand,<br />Salem - 636001, Tamil Nadu</span>
+                <span>Samenathan Complex, Near Taluka Office,<br />Mettur Main Road, Omalur Tk<br />Salem Dt - 636455, Tamil Nadu</span>
               </div>
             </div>
           </div>
 
           {/* Timing */}
-          <div className="space-y-4">
-            <h4 className="font-semibold text-lg">Timings</h4>
+          <div className="space-y-4 lg:col-span-3">
+            <h4 className="font-semibold text-lg">Work Timings</h4>
             <div className="space-y-3">
               <div className="flex items-start gap-3 text-background/80 text-sm">
                 <Clock className="w-5 h-5 mt-0.5 shrink-0" />
                 <div>
                   <p className="font-medium text-background">Monday - Saturday</p>
-                  <p>6:00 AM - 8:00 PM</p>
+                  <p>07:00 AM - 05:00 PM </p>
                 </div>
               </div>
-              <div className="flex items-start gap-3 text-background/80 text-sm">
+              {/* <div className="flex items-start gap-3 text-background/80 text-sm">
                 <Clock className="w-5 h-5 mt-0.5 shrink-0" />
                 <div>
                   <p className="font-medium text-background">Sunday</p>
                   <p>7:00 AM - 12:00 PM</p>
                 </div>
-              </div>
+              </div> */}
             </div>
+
+            <h4 className="font-semibold text-lg">Class Timing</h4>
+            <div className="space-y-3">
+              <div className="flex items-start gap-3 text-background/80 text-sm">
+                <Clock className="w-5 h-5 mt-0.5 shrink-0" />
+                <div>
+                  <p className="font-medium text-background">Monday - Saturday</p>
+                  <p>09:00 AM - 10:00 PM  <br/> 04:00 PM - 05:00 PM</p>
+                </div>
+              </div>
+              {/* <div className="flex items-start gap-3 text-background/80 text-sm">
+                <Clock className="w-5 h-5 mt-0.5 shrink-0" />
+                <div>
+                  <p className="font-medium text-background">Sunday</p>
+                  <p>7:00 AM - 12:00 PM</p>
+                </div>
+              </div> */}
+            </div>
+
+
+
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-background/20 mt-8 pt-6 text-center text-sm text-background/60">
-          <p>© {new Date().getFullYear()} Murugan Driving Institute. {t('footer.rights')}.</p>
+          <p>© {new Date().getFullYear()} {t('brand.full')}. {t('footer.rights')}.</p>
         </div>
       </div>
     </footer>

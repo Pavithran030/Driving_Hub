@@ -62,10 +62,10 @@ const Stories = () => {
     {
       name: language === 'ta' ? 'மீனாட்சி சுந்தரம்' : 'Meenakshi Sundaram',
       location: language === 'ta' ? 'மெச்சேரி' : 'Mecheri',
-      course: language === 'ta' ? 'இரு சக்கர வாகன பயிற்சி' : 'Two-Wheeler Training',
+      course: language === 'ta' ? 'கனரக வாகன பயிற்சி' : 'Heavy Vehicle Training',
       quote: language === 'ta'
-        ? 'என் மகளுக்கு ஸ்கூட்டர் ஓட்ட கற்றுக்கொடுத்தார்கள். பெண்களுக்கு தனி பயிற்சியாளர் இருப்பது மிகவும் நல்லது. இப்போது தன்னம்பிக்கையுடன் கல்லூரி செல்கிறாள்.'
-        : 'They taught my daughter to ride scooter. Having a lady trainer is very good. Now she confidently goes to college.',
+        ? 'லாரி ஓட்ட கற்றுக்கொண்டேன். முழு நெடுஞ்சாலை பயிற்சி கொடுத்தார்கள். இப்போது வணிக வாகன உரிமம் வாங்கி வேலை செய்கிறேன்.'
+        : 'Learned lorry driving. They provided complete highway training. Now I have commercial vehicle license and working.',
     },
   ];
 

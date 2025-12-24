@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, MessageCircle, Car, Bike, FileText, ClipboardList, Award, Clock, Shield, Users, MapPin, Heart } from 'lucide-react';
+import { Phone, MessageCircle, Car, Truck, FileText, ClipboardList, Award, Clock, Shield, Users, MapPin, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
@@ -15,17 +15,15 @@ const Index = () => {
 
   const services = [
     { icon: Car, title: t('services.driving.title'), description: t('services.driving.desc') },
-    { icon: Bike, title: t('services.twowheeler.title'), description: t('services.twowheeler.desc') },
+    { icon: Truck, title: t('services.heavyvehicle.title'), description: t('services.heavyvehicle.desc') },
     { icon: FileText, title: t('services.licence.title'), description: t('services.licence.desc') },
     { icon: ClipboardList, title: t('services.rc.title'), description: t('services.rc.desc') },
   ];
 
   const whyChoose = [
     { icon: Award, title: t('why.experience'), description: t('why.experience.desc') },
-    { icon: Shield, title: t('why.passRate'), description: t('why.passRate.desc') },
     { icon: Car, title: t('why.safety'), description: t('why.safety.desc') },
     { icon: Clock, title: t('why.flexible'), description: t('why.flexible.desc') },
-    { icon: MapPin, title: t('why.pickup'), description: t('why.pickup.desc') },
     { icon: Heart, title: t('why.friendly'), description: t('why.friendly.desc') },
   ];
 

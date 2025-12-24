@@ -115,7 +115,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{t('footer.address')}</h3>
-                    <p className="text-muted-foreground">123 Main Road, Near Bus Stand,<br />Salem - 636001, Tamil Nadu</p>
+                    <p className="text-muted-foreground">Samenathan Complex, Near Taluka Office,<br />Mettur Main Road, Omalur Tk<br />Salem Dt - 636455, Tamil Nadu</p>
                   </div>
                 </div>
 
@@ -126,21 +126,27 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-foreground">{language === 'ta' ? 'நேரம்' : 'Timings'}</h3>
                     <p className="text-muted-foreground">
-                      {language === 'ta' ? 'திங்கள் - சனி: காலை 6 - இரவு 8' : 'Mon - Sat: 6:00 AM - 8:00 PM'}<br />
-                      {language === 'ta' ? 'ஞாயிறு: காலை 7 - மதியம் 12' : 'Sunday: 7:00 AM - 12:00 PM'}
+                      {language === 'ta' ? 'திங்கள் - சனி: காலை 6 - இரவு 8' : 'Mon - Sat: 7:00 AM - 5:00 PM'}<br />
+                      {/* {language === 'ta' ? 'ஞாயிறு: காலை 7 - மதியம் 12' : 'Sunday: 7:00 AM - 12:00 PM'} */}
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Map Placeholder */}
+              {/* Map */}
               <div className="mt-8">
                 <h3 className="font-semibold text-foreground mb-4">{t('contact.location')}</h3>
-                <div className="bg-muted rounded-2xl h-64 flex items-center justify-center">
-                  <div className="text-center text-muted-foreground">
-                    <MapPin className="w-12 h-12 mx-auto mb-2 opacity-50" />
-                    <p>{language === 'ta' ? 'Google Map இங்கே வரும்' : 'Google Map Embed Here'}</p>
-                  </div>
+                <div className="rounded-2xl overflow-hidden border border-border/50 shadow-lg">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3713.0734262489264!2d78.03881097779417!3d11.739901858753491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf9915423bf39%3A0x49d79817ec0bc856!2sMurugan%20Driving%20Institute%20Omalur!5e1!3m2!1sen!2sin!4v1766569620975!5m2!1sen!2sin"
+                    width="100%"
+                    height="350"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Murugan Driving Institute Location"
+                  />
                 </div>
               </div>
             </div>

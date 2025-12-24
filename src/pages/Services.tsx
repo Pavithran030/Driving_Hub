@@ -1,4 +1,4 @@
-import { Car, Bike, FileText, RefreshCw, MapPin, Copy, CheckCircle, ClipboardList, Shield, AlertCircle } from 'lucide-react';
+import { Car, Truck, FileText, RefreshCw, MapPin, Copy, CheckCircle, ClipboardList, Shield, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
@@ -29,13 +29,13 @@ const Services = () => {
         : ['Confidence building', 'Traffic handling', 'Parking & reversing practice', 'Highway driving basics'],
     },
     {
-      icon: Bike,
-      title: t('courses.twowheeler.title'),
-      forWhom: t('courses.twowheeler.for'),
-      duration: t('courses.twowheeler.duration'),
+      icon: Truck,
+      title: t('courses.heavyvehicle.title'),
+      forWhom: t('courses.heavyvehicle.for'),
+      duration: t('courses.heavyvehicle.duration'),
       learns: language === 'ta'
-        ? ['சமநிலை & கட்டுப்பாடு', 'திரும்புதல் & நிறுத்துதல்', 'போக்குவரத்து விதிகள்', 'பாதுகாப்பு நடைமுறைகள்']
-        : ['Balance & control', 'Turning & stopping', 'Traffic rules', 'Safety practices'],
+        ? ['கனரக வாகன கட்டுப்பாடு', 'சரக்கு ஏற்றுதல்/இறக்குதல்', 'நெடுஞ்சாலை ஓட்டுதல்', 'வணிக உரிம தயாரிப்பு']
+        : ['Heavy vehicle control', 'Loading/unloading techniques', 'Highway driving', 'Commercial license preparation'],
     },
   ];
 

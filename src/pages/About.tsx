@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock, Award, Users, Car, ShieldCheck } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Award, Users, Car, ShieldCheck, Truck, Settings, CheckCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -7,23 +7,27 @@ import CTASection from '@/components/CTASection';
 const About = () => {
   const { language } = useLanguage();
 
+  // Owner/Founder Information
+  const owner = {
+    name: language === 'ta' ? 'செல்வராஜ் எம்' : 'Selvaraj M.',
+    role: language === 'ta' ? 'நிறுவனர் & தலைமை பயிற்சியாளர்' : 'Founder & Chief Instructor',
+    experience: language === 'ta' ? '20 ஆண்டுகள் அனுபவம்' : '20 years experience',
+    specialty: language === 'ta' ? 'ஆரம்பநிலையாளர்கள் & பெண்கள்' : 'Beginners & Women Learners',
+    languages: language === 'ta' ? 'தமிழ், ஆங்கிலம்' : 'Tamil, English',
+    bio: language === 'ta' 
+      ? 'செல்வராஜ் 2008 ஆம் ஆண்டில் முருகன் டிரைவிங் நிறுவனத்தை நிறுவினார். 20 ஆண்டுகளுக்கும் மேலான அனுபவத்துடன், சேலம் மற்றும் சுற்றுவட்டார பகுதிகளில் 10,000+ மாணவர்களுக்கு பயிற்சி அளித்துள்ளார். பயமுள்ள மாணவர்களுக்கு நம்பிக்கையூட்டும் விதத்தில் கற்பிப்பதில் நிபுணர். RTO விதிகள், சாலை பாதுகாப்பு மற்றும் பாதுகாப்பு ஓட்டுதலில் ஆழ்ந்த அறிவு பெற்றவர். அவரது தனிப்பயனாக்கப்பட்ட கற்பித்தல் முறையானது ஒவ்வொரு மாணவரும் தன்னம்பிக்கையுடன் பாதுகாப்பாக ஓட்ட உறுதி செய்கிறது.'
+      : 'Selvaraj founded Murugan Driving Institute in 2008. With over 20 years of experience, he has trained 10,000+ students in Salem and surrounding areas. Expert in teaching nervous learners with patience and building their confidence. Deep knowledge of RTO rules, road safety, and defensive driving. His personalized teaching approach ensures every student learns to drive safely and confidently.',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
+    qualifications: [
+      language === 'ta' ? 'RTO சான்றிதழ் பயிற்சியாளர்' : 'RTO Certified Trainer',
+      language === 'ta' ? 'பாதுகாப்பு ஓட்டுநர் சான்றிதழ்' : 'Defensive Driving Certified',
+      language === 'ta' ? '10,000+ மாணவர்களுக்கு பயிற்சி' : 'Trained 10,000+ Students',
+      language === 'ta' ? '95% தேர்வு வெற்றி விகிதம்' : '95% Test Success Rate',
+    ],
+  };
+
+  // Instructors Team
   const instructors = [
-    {
-      name: language === 'ta' ? 'செல்வராஜ் எம்' : 'Selvaraj M.',
-      role: language === 'ta' ? 'தலைமை பயிற்சியாளர்' : 'Chief Instructor',
-      experience: language === 'ta' ? '20 ஆண்டுகள் அனுபவம்' : '20 years experience',
-      specialty: language === 'ta' ? 'ஆரம்பநிலையாளர்கள் & பெண்கள்' : 'Beginners & Women Learners',
-      languages: language === 'ta' ? 'தமிழ், ஆங்கிலம்' : 'Tamil, English',
-      bio: language === 'ta' 
-        ? 'செல்வராஜ் எங்கள் நிறுவனத்தின் நிறுவனர் மற்றும் தலைமை பயிற்சியாளர். பயமுள்ள மாணவர்களுக்கு நம்பிக்கையூட்டும் விதத்தில் கற்பிப்பதில் நிபுணர். RTO விதிகள் மற்றும் சாலை பாதுகாப்பில் ஆழ்ந்த அறிவு பெற்றவர்.'
-        : 'Selvaraj is the founder and chief instructor of our institute. Expert in teaching nervous learners with patience and building their confidence. Deep knowledge of RTO rules and road safety.',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
-      qualifications: [
-        language === 'ta' ? 'RTO சான்றிதழ் பயிற்சியாளர்' : 'RTO Certified Trainer',
-        language === 'ta' ? 'பாதுகாப்பு ஓட்டுநர் சான்றிதழ்' : 'Defensive Driving Certified',
-        language === 'ta' ? '10,000+ மாணவர்களுக்கு பயிற்சி' : 'Trained 10,000+ Students',
-      ],
-    },
     {
       name: language === 'ta' ? 'ராஜேஷ் கே' : 'Rajesh K.',
       role: language === 'ta' ? 'மூத்த பயிற்சியாளர்' : 'Senior Instructor',
@@ -79,6 +83,46 @@ const About = () => {
     { value: '10,000+', label: language === 'ta' ? 'மாணவர்கள்' : 'Students Trained' },
     { value: '95%', label: language === 'ta' ? 'தேர்வு வெற்றி' : 'Pass Rate' },
     { value: '4', label: language === 'ta' ? 'நிபுணர் பயிற்சியாளர்கள்' : 'Expert Trainers' },
+  ];
+
+  // Training Vehicles
+  const vehicles = [
+    {
+      type: language === 'ta' ? 'இலகு வாகனம் (கார்)' : 'Light Vehicle (Car)',
+      icon: Car,
+      models: language === 'ta' 
+        ? 'மாருதி சுவிஃப்ட், ஹூண்டாய் i20, டாடா டியாகோ'
+        : 'Maruti Swift, Hyundai i20, Tata Tiago',
+      features: [
+        language === 'ta' ? 'இரட்டை கட்டுப்பாடு அமைப்பு' : 'Dual Control System',
+        language === 'ta' ? 'ABS & ஏர்பேக்குகள்' : 'ABS & Airbags',
+        language === 'ta' ? 'AC வசதி' : 'Air Conditioning',
+        language === 'ta' ? 'பவர் ஸ்டீயரிங்' : 'Power Steering',
+        language === 'ta' ? 'நன்கு பராமரிக்கப்பட்டது' : 'Well Maintained',
+      ],
+      description: language === 'ta'
+        ? 'ஆரம்பநிலையாளர்களுக்கு சிறந்த நவீன கார்கள். பாதுகாப்பு அம்சங்களுடன் வசதியான கற்றல் அனுபவத்திற்கு.'
+        : 'Modern cars perfect for beginners. Comfortable learning experience with safety features.',
+      image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=600&fit=crop',
+    },
+    {
+      type: language === 'ta' ? 'கனரக வாகனம் (லாரி/டிரக்)' : 'Heavy Vehicle (Truck/Lorry)',
+      icon: Truck,
+      models: language === 'ta'
+        ? 'டாடா 407, மஹிந்திரா போல்ரோ பிக்-அப், ஆஷோக் லேலண்ட்'
+        : 'Tata 407, Mahindra Bolero Pickup, Ashok Leyland',
+      features: [
+        language === 'ta' ? 'அனுபவமிக்க பயிற்சியாளர்' : 'Experienced Instructor',
+        language === 'ta' ? 'நெடுஞ்சாலை பயிற்சி' : 'Highway Training',
+        language === 'ta' ? 'சரக்கு ஏற்றுதல்/இறக்குதல் பயிற்சி' : 'Loading/Unloading Training',
+        language === 'ta' ? 'வணிக உரிம உதவி' : 'Commercial License Support',
+        language === 'ta' ? 'சான்றிதழ் உதவி' : 'Certificate Assistance',
+      ],
+      description: language === 'ta'
+        ? 'வணிக வாகன ஓட்டுநர்களுக்கான முழுமையான பயிற்சி. நெடுஞ்சாலை மற்றும் சரக்கு கையாளுதலில் நிபுணத்துவம்.'
+        : 'Complete training for commercial vehicle drivers. Expertise in highway and cargo handling.',
+      image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&h=600&fit=crop',
+    },
   ];
 
   return (
@@ -145,26 +189,93 @@ const About = () => {
         </div>
       </section>
 
-      {/* Our Instructors - Detailed Section */}
+      {/* Owner/Founder Section */}
       <section className="section-padding bg-muted/50">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              {language === 'ta' ? 'எங்கள் பயிற்சியாளர்கள்' : 'Our Instructors'}
+              {language === 'ta' ? 'நிறுவனர்' : 'Our Founder'}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               {language === 'ta' 
-                ? 'அனுபவம் வாய்ந்த, நட்பான மற்றும் பொறுமையான பயிற்சியாளர்கள் குழு'
-                : 'A team of experienced, friendly and patient instructors'}
+                ? 'முருகன் டிரைவிங் நிறுவனத்தின் நிறுவனர் மற்றும் தலைமை பயிற்சியாளர்'
+                : 'Founder and Chief Instructor of Murugan Driving Institute'}
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Owner Card */}
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-card rounded-3xl overflow-hidden card-elevated border-2 border-primary/20">
+              <div className="flex flex-col md:flex-row">
+                {/* Image */}
+                <div className="md:w-1/3 h-64 md:h-auto flex-shrink-0">
+                  <img 
+                    src={owner.image} 
+                    alt={owner.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                {/* Details */}
+                <div className="flex-1 p-6 md:p-8">
+                  <div className="mb-4">
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">{owner.name}</h3>
+                    <p className="text-primary font-semibold text-lg">{owner.role}</p>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">
+                      {owner.experience}
+                    </span>
+                    <span className="bg-secondary/10 text-secondary px-4 py-1.5 rounded-full text-sm font-medium">
+                      {owner.languages}
+                    </span>
+                  </div>
+                  
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    {owner.bio}
+                  </p>
+                  
+                  <div className="border-t border-border/50 pt-4">
+                    <p className="text-sm text-muted-foreground mb-3 font-semibold">
+                      {language === 'ta' ? 'சிறப்புகள் & சான்றிதழ்கள்:' : 'Specializations & Certifications:'}
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {owner.qualifications.map((qual, qIndex) => (
+                        <div key={qIndex} className="flex items-center gap-2">
+                          <div className="w-2 h-2 rounded-full bg-primary"></div>
+                          <span className="text-sm text-foreground">{qual}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Instructors Team Section */}
+      <section className="section-padding bg-background">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              {language === 'ta' ? 'எங்கள் பயிற்சியாளர்கள் குழு' : 'Our Instructors Team'}
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              {language === 'ta' 
+                ? 'அனுபவம் வாய்ந்த, நட்பான மற்றும் பொறுமையான பயிற்சியாளர்கள்'
+                : 'Experienced, friendly and patient professional instructors'}
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {instructors.map((instructor, index) => (
-              <div key={index} className="bg-card rounded-3xl overflow-hidden card-elevated border border-border/50">
-                <div className="flex flex-col sm:flex-row">
+              <div key={index} className="bg-card rounded-2xl overflow-hidden card-elevated border border-border/50 hover:border-primary/30 transition-all">
+                <div className="flex flex-col">
                   {/* Image */}
-                  <div className="sm:w-48 h-48 sm:h-auto flex-shrink-0">
+                  <div className="h-48 w-full flex-shrink-0">
                     <img 
                       src={instructor.image} 
                       alt={instructor.name}
@@ -173,17 +284,17 @@ const About = () => {
                   </div>
                   
                   {/* Details */}
-                  <div className="flex-1 p-6">
+                  <div className="p-5">
                     <div className="mb-3">
-                      <h3 className="text-xl font-bold text-foreground">{instructor.name}</h3>
-                      <p className="text-primary font-medium">{instructor.role}</p>
+                      <h3 className="text-lg font-bold text-foreground">{instructor.name}</h3>
+                      <p className="text-primary font-medium text-sm">{instructor.role}</p>
                     </div>
                     
-                    <div className="flex flex-wrap gap-2 mb-3 text-sm">
-                      <span className="bg-primary/10 text-primary px-3 py-1 rounded-full">
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      <span className="bg-primary/10 text-primary px-2.5 py-1 rounded-full text-xs font-medium">
                         {instructor.experience}
                       </span>
-                      <span className="bg-secondary/10 text-secondary px-3 py-1 rounded-full">
+                      <span className="bg-secondary/10 text-secondary px-2.5 py-1 rounded-full text-xs font-medium">
                         {instructor.languages}
                       </span>
                     </div>
@@ -193,10 +304,10 @@ const About = () => {
                     </p>
                     
                     <div className="border-t border-border/50 pt-3">
-                      <p className="text-xs text-muted-foreground mb-2 font-medium">
+                      <p className="text-xs text-muted-foreground mb-2 font-semibold">
                         {language === 'ta' ? 'சிறப்புகள்:' : 'Specializations:'}
                       </p>
-                      <div className="flex flex-wrap gap-1">
+                      <div className="flex flex-wrap gap-1.5">
                         {instructor.qualifications.map((qual, qIndex) => (
                           <span key={qIndex} className="text-xs bg-muted px-2 py-1 rounded text-foreground">
                             {qual}
@@ -208,6 +319,98 @@ const About = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Training Vehicles Section */}
+      <section className="section-padding bg-muted/50">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              {language === 'ta' ? 'எங்கள் பயிற்சி வாகனங்கள்' : 'Our Training Vehicles'}
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              {language === 'ta' 
+                ? 'நவீன, நன்கு பராமரிக்கப்பட்ட வாகனங்கள் பாதுகாப்பான கற்றலுக்காக'
+                : 'Modern, well-maintained vehicles for safe and comfortable learning'}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {vehicles.map((vehicle, index) => {
+              const IconComponent = vehicle.icon;
+              return (
+                <div key={index} className="bg-card rounded-3xl overflow-hidden card-elevated border border-border/50 hover:border-primary/20 transition-all">
+                  {/* Vehicle Image */}
+                  <div className="h-56 relative overflow-hidden">
+                    <img 
+                      src={vehicle.image} 
+                      alt={vehicle.type}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
+                      <div className="flex items-center gap-2">
+                        <IconComponent className="w-5 h-5 text-primary" />
+                        <span className="font-semibold text-foreground text-sm">{vehicle.type}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Vehicle Details */}
+                  <div className="p-6">
+                    <div className="mb-4">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Settings className="w-4 h-4 text-muted-foreground" />
+                        <span className="text-sm font-medium text-muted-foreground">
+                          {language === 'ta' ? 'மாடல்கள்:' : 'Models:'}
+                        </span>
+                      </div>
+                      <p className="text-foreground font-medium">{vehicle.models}</p>
+                    </div>
+
+                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                      {vehicle.description}
+                    </p>
+
+                    <div className="border-t border-border/50 pt-4">
+                      <p className="text-sm font-semibold text-foreground mb-3">
+                        {language === 'ta' ? 'முக்கிய அம்சங்கள்:' : 'Key Features:'}
+                      </p>
+                      <div className="space-y-2">
+                        {vehicle.features.map((feature, fIndex) => (
+                          <div key={fIndex} className="flex items-center gap-2">
+                            <CheckCircle className="w-4 h-4 text-secondary flex-shrink-0" />
+                            <span className="text-sm text-muted-foreground">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Additional Info */}
+          <div className="mt-12 max-w-3xl mx-auto">
+            <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-6 md:p-8 border border-primary/10">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <ShieldCheck className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">
+                    {language === 'ta' ? 'பாதுகாப்பு & பராமரிப்பு' : 'Safety & Maintenance'}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {language === 'ta'
+                      ? 'அனைத்து வாகனங்களும் தொழில்முறை தரநிலைகளுக்கு ஏற்ப தொடர்ந்து பராமரிக்கப்படுகின்றன. ஒவ்வொரு பயிற்சி அமர்விற்கு முன்னரும் முழுமையான பாதுகாப்பு சோதனை மேற்கொள்ளப்படுகிறது. காப்பீடு மற்றும் RTO அங்கீகாரம் புதுப்பிக்கப்பட்டுள்ளது.'
+                      : 'All vehicles are regularly maintained to professional standards. Complete safety checks before every training session. Insurance and RTO approval up to date.'}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
