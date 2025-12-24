@@ -7,8 +7,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-foreground text-background">
-      <div className="container-custom section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <div className="container-custom py-8 md:py-12 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {/* About */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
@@ -16,7 +16,7 @@ const Footer = () => {
                 <Car className="w-7 h-7 text-white" />
               </div>
               <div>
-                <h3 className="font-bold text-lg">Salem Driving</h3>
+                <h3 className="font-bold text-lg">Murugan Driving </h3>
                 <p className="text-sm text-background/70">Institute</p>
               </div>
             </div>
@@ -101,8 +101,8 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-background/20 mt-12 pt-8 text-center text-sm text-background/60">
-          <p>© {new Date().getFullYear()} Salem Driving Institute. {t('footer.rights')}.</p>
+        <div className="border-t border-background/20 mt-8 pt-6 text-center text-sm text-background/60">
+          <p>© {new Date().getFullYear()} Murugan Driving Institute. {t('footer.rights')}.</p>
         </div>
       </div>
     </footer>

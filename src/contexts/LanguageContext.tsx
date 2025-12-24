@@ -76,7 +76,7 @@ const translations: Record<Language, Record<string, string>> = {
     // About Page
     'about.title': 'About Our Institute',
     'about.story.title': 'Our Story',
-    'about.story.content': 'Established in 2008, Salem Driving Institute has been a trusted name in driving education for over 15 years. We started with a simple mission: to create confident, safe drivers who contribute to road safety in our community.',
+    'about.story.content': 'Established in 2008, Murugan Driving Institute has been a trusted name in driving education for over 15 years. We started with a simple mission: to create confident, safe drivers who contribute to road safety in our community.',
     'about.mission.title': 'Our Mission',
     'about.mission.content': 'To provide comprehensive driving education that builds confidence, emphasizes safety, and prepares every student for a lifetime of responsible driving.',
     'about.instructors.title': 'Our Instructors',

@@ -30,7 +30,7 @@ const Header = () => {
               <Car className="w-6 h-6 md:w-7 md:h-7 text-white" />
             </div>
             <div className="hidden sm:block">
-              <h1 className="font-bold text-lg md:text-xl text-foreground leading-tight">Salem Driving</h1>
+              <h1 className="font-bold text-lg md:text-xl text-foreground leading-tight">Murugan Driving </h1>
               <p className="text-xs text-muted-foreground -mt-0.5">Institute</p>
             </div>
           </Link>
