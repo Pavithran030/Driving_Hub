@@ -1,4 +1,5 @@
-import { Car, Truck, FileText, RefreshCw, MapPin, Copy, CheckCircle, ClipboardList, Shield, AlertCircle } from 'lucide-react';
+import { Truck, FileText, RefreshCw, MapPin, Copy, CheckCircle, ClipboardList, Shield, AlertCircle } from 'lucide-react';
+import carIcon from '@/assets/car-icon.svg';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
@@ -6,12 +7,16 @@ import Footer from '@/components/Footer';
 import CTASection from '@/components/CTASection';
 import { Link } from 'react-router-dom';
 
+const CarIcon = ({ className }: { className?: string }) => (
+  <img src={carIcon} alt="Car" className={className || "w-full h-full"} />
+);
+
 const Services = () => {
   const { t, language } = useLanguage();
 
   const drivingCourses = [
     {
-      icon: Car,
+      icon: CarIcon,
       title: t('courses.beginner.title'),
       forWhom: t('courses.beginner.for'),
       duration: t('courses.beginner.duration'),
@@ -20,7 +25,7 @@ const Services = () => {
         : ['Basic controls & clutch/gear handling', 'U-turns, parking, reversing', 'Traffic signals & lane discipline', 'City traffic & basic highway rules'],
     },
     {
-      icon: Car,
+      icon: CarIcon,
       title: t('courses.refresher.title'),
       forWhom: t('courses.refresher.for'),
       duration: t('courses.refresher.duration'),

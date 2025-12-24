@@ -1,8 +1,13 @@
-import { Phone, Mail, MapPin, Clock, Award, Users, Car, ShieldCheck, Truck, Settings, CheckCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Award, Users, ShieldCheck, Truck, Settings, CheckCircle } from 'lucide-react';
+import carIcon from '@/assets/car-icon.svg';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CTASection from '@/components/CTASection';
+
+const CarIcon = ({ className }: { className?: string }) => (
+  <img src={carIcon} alt="Car" className={className || "w-full h-full"} />
+);
 
 const About = () => {
   const { language } = useLanguage();
@@ -89,7 +94,7 @@ const About = () => {
   const vehicles = [
     {
       type: language === 'ta' ? 'இலகு வாகனம் (கார்)' : 'Light Vehicle (Car)',
-      icon: Car,
+      icon: CarIcon,
       models: language === 'ta' 
         ? 'மாருதி சுவிஃப்ட், ஹூண்டாய் i20, டாடா டியாகோ'
         : 'Maruti Swift, Hyundai i20, Tata Tiago',
@@ -173,7 +178,7 @@ const About = () => {
                 <span className="text-sm font-medium text-foreground">{language === 'ta' ? 'பாதுகாப்பு முதல்' : 'Safety First'}</span>
               </div>
               <div className="flex items-center gap-3 bg-card p-4 rounded-xl border border-border/50">
-                <Car className="w-8 h-8 text-primary flex-shrink-0" />
+                <CarIcon className="w-8 h-8 text-purple-600 flex-shrink-0" />
                 <span className="text-sm font-medium text-foreground">{language === 'ta' ? 'இரட்டை கட்டுப்பாடு கார்' : 'Dual Control Cars'}</span>
               </div>
               <div className="flex items-center gap-3 bg-card p-4 rounded-xl border border-border/50">

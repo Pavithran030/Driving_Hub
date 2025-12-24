@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, Car, Facebook, Instagram, Youtube } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube } from 'lucide-react';
+import carIcon from '@/assets/car-icon.svg';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
@@ -12,8 +13,8 @@ const Footer = () => {
           {/* About */}
           <div className="space-y-4 lg:col-span-3">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl gradient-hero flex items-center justify-center">
-                <Car className="w-7 h-7 text-white" />
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center p-2">
+                <img src={carIcon} alt="Car" className="w-full h-full" />
               </div>
               <div>
                 <h3 className="font-bold text-lg">{t('brand.name')}</h3>

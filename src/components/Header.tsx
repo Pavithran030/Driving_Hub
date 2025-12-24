@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, MessageCircle, Car } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle } from 'lucide-react';
+import carIcon from '@/assets/car-icon.svg';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageToggle from './LanguageToggle';
@@ -26,8 +27,8 @@ const Header = () => {
         <div className="flex items-center justify-between h-14 md:h-16 lg:h-20 px-3 md:px-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl gradient-hero flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-              <Car className="w-6 h-6 md:w-7 md:h-7 text-white" />
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform p-1.5">
+              <img src={carIcon} alt="Car" className="w-full h-full" />
             </div>
             <div>
               <h1 className="font-bold text-base md:text-lg lg:text-xl text-foreground leading-tight">{t('brand.name')}</h1>
