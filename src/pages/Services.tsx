@@ -1,5 +1,6 @@
-import { Truck, FileText, RefreshCw, MapPin, Copy, CheckCircle, ClipboardList, Shield, AlertCircle } from 'lucide-react';
+import { FileText, RefreshCw, MapPin, Copy, CheckCircle, ClipboardList, Shield, AlertCircle } from 'lucide-react';
 import carIcon from '@/assets/car-icon.svg';
+import truckIcon from '@/assets/truck-icon.svg';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
@@ -9,6 +10,10 @@ import { Link } from 'react-router-dom';
 
 const CarIcon = ({ className }: { className?: string }) => (
   <img src={carIcon} alt="Car" className={className || "w-full h-full"} />
+);
+
+const TruckIcon = ({ className }: { className?: string }) => (
+  <img src={truckIcon} alt="Truck" className={className || "w-full h-full"} />
 );
 
 const Services = () => {
@@ -34,7 +39,7 @@ const Services = () => {
         : ['Confidence building', 'Traffic handling', 'Parking & reversing practice', 'Highway driving basics'],
     },
     {
-      icon: Truck,
+      icon: TruckIcon,
       title: t('courses.heavyvehicle.title'),
       forWhom: t('courses.heavyvehicle.for'),
       duration: t('courses.heavyvehicle.duration'),
@@ -283,6 +288,78 @@ const Services = () => {
                 ? 'RC வேலைக்கு ஆதரவு தேவையா? எங்களை தொடர்பு கொள்ளுங்கள்!'
                 : 'Need support with RC work? Contact us!'}
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Helpful Resources Section */}
+      <section className="section-padding bg-muted/30">
+        <div className="container-custom">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+              {language === 'ta' ? 'பயனுள்ள வளங்கள்' : 'Helpful Resources'}
+            </h2>
+            <p className="text-muted-foreground">
+              {language === 'ta' ? 'பாதுகாப்பான ஓட்டுநருக்கு அத்தியாவசியமான தகவல்கள்' : 'Essential information for safe driving'}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {/* Traffic Rules */}
+            <a
+              href="https://parivahan.gov.in/parivahan//en/content/know-your-traffic-signs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-card rounded-2xl p-6 md:p-8 card-elevated border border-border/50 hover:border-primary/50 transition-all"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                  <span className="text-4xl animate-pulse">⚠️</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                    {language === 'ta' ? 'போக்குவரத்து விதிகள் & சிக்னல்கள்' : 'Traffic Rules & Signs'}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    {language === 'ta' 
+                      ? 'இந்திய சாலை விதிகள், போக்குவரத்து சிக்னல்கள் மற்றும் பாதுகாப்பு வழிகாட்டுதல்கள்'
+                      : 'Indian road rules, traffic signals, and safety guidelines'}
+                  </p>
+                  <span className="text-sm font-medium text-primary flex items-center gap-2">
+                    {language === 'ta' ? 'விதிகளைப் பார்க்க' : 'View Rules'}
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            {/* RTO Information */}
+            <a
+              href="https://parivahan.gov.in/parivahan/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-card rounded-2xl p-6 md:p-8 card-elevated border border-border/50 hover:border-secondary/50 transition-all"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                  <span className="text-4xl">🏛️</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-secondary transition-colors">
+                    {language === 'ta' ? 'RTO தகவல்கள்' : 'RTO Information'}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    {language === 'ta'
+                      ? 'உரிம விண்ணப்பம், வாகன பதிவு மற்றும் RTO சேவைகள்'
+                      : 'License application, vehicle registration, and RTO services'}
+                  </p>
+                  <span className="text-sm font-medium text-secondary flex items-center gap-2">
+                    {language === 'ta' ? 'RTO வலைத்தளம்' : 'Visit RTO Portal'}
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </span>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </section>

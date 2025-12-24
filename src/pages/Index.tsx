@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Phone, MessageCircle, Truck, FileText, ClipboardList, Award, Clock, Shield, Users, MapPin, Heart } from 'lucide-react';
+import { Phone, MessageCircle, FileText, ClipboardList, Award, Clock, Shield, Users, MapPin, Heart } from 'lucide-react';
 import carIcon from '@/assets/car-icon.svg';
+import truckIcon from '@/assets/truck-icon.svg';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
@@ -15,12 +16,16 @@ const CarIcon = ({ className }: { className?: string }) => (
   <img src={carIcon} alt="Car" className={className || "w-full h-full"} />
 );
 
+const TruckIcon = ({ className }: { className?: string }) => (
+  <img src={truckIcon} alt="Truck" className={className || "w-full h-full"} />
+);
+
 const Index = () => {
   const { t, language } = useLanguage();
 
   const services = [
     { icon: CarIcon, title: t('services.driving.title'), description: t('services.driving.desc') },
-    { icon: Truck, title: t('services.heavyvehicle.title'), description: t('services.heavyvehicle.desc') },
+    { icon: TruckIcon, title: t('services.heavyvehicle.title'), description: t('services.heavyvehicle.desc') },
     { icon: FileText, title: t('services.licence.title'), description: t('services.licence.desc') },
     { icon: ClipboardList, title: t('services.rc.title'), description: t('services.rc.desc') },
   ];
@@ -92,9 +97,15 @@ const Index = () => {
                 </a>
               </Button>
               <Button variant="heroOutline" size="xl" asChild>
-                <Link to="/contact">
-                  {t('hero.bookDemo')}
-                </Link>
+                <a 
+                  href="https://parivahan.gov.in/parivahan//en/content/know-your-traffic-signs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <span className="text-xl">⚠️</span>
+                  {language === 'ta' ? 'போக்குவரத்து விதிகள்' : 'Traffic Rules'}
+                </a>
               </Button>
             </div>
           </div>

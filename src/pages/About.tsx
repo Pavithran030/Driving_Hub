@@ -1,5 +1,7 @@
-import { Phone, Mail, MapPin, Clock, Award, Users, ShieldCheck, Truck, Settings, CheckCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Award, Users, ShieldCheck, Settings, CheckCircle } from 'lucide-react';
 import carIcon from '@/assets/car-icon.svg';
+import truckIcon from '@/assets/truck-icon.svg';
+import photo13 from '@/assets/photo-13.jpg';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -9,12 +11,16 @@ const CarIcon = ({ className }: { className?: string }) => (
   <img src={carIcon} alt="Car" className={className || "w-full h-full"} />
 );
 
+const TruckIcon = ({ className }: { className?: string }) => (
+  <img src={truckIcon} alt="Truck" className={className || "w-full h-full"} />
+);
+
 const About = () => {
   const { language } = useLanguage();
 
   // Owner/Founder Information
   const owner = {
-    name: language === 'ta' ? 'செல்வராஜ் எம்' : 'Selvaraj M.',
+    name: language === 'ta' ? 'முருகன்' : 'Murugan',
     role: language === 'ta' ? 'நிறுவனர் & தலைமை பயிற்சியாளர்' : 'Founder & Chief Instructor',
     experience: language === 'ta' ? '20 ஆண்டுகள் அனுபவம்' : '20 years experience',
     specialty: language === 'ta' ? 'ஆரம்பநிலையாளர்கள் & பெண்கள்' : 'Beginners & Women Learners',
@@ -22,7 +28,7 @@ const About = () => {
     bio: language === 'ta' 
       ? 'செல்வராஜ் 2008 ஆம் ஆண்டில் முருகன் டிரைவிங் நிறுவனத்தை நிறுவினார். 20 ஆண்டுகளுக்கும் மேலான அனுபவத்துடன், சேலம் மற்றும் சுற்றுவட்டார பகுதிகளில் 10,000+ மாணவர்களுக்கு பயிற்சி அளித்துள்ளார். பயமுள்ள மாணவர்களுக்கு நம்பிக்கையூட்டும் விதத்தில் கற்பிப்பதில் நிபுணர். RTO விதிகள், சாலை பாதுகாப்பு மற்றும் பாதுகாப்பு ஓட்டுதலில் ஆழ்ந்த அறிவு பெற்றவர். அவரது தனிப்பயனாக்கப்பட்ட கற்பித்தல் முறையானது ஒவ்வொரு மாணவரும் தன்னம்பிக்கையுடன் பாதுகாப்பாக ஓட்ட உறுதி செய்கிறது.'
       : 'Selvaraj founded Murugan Driving Institute in 2008. With over 20 years of experience, he has trained 10,000+ students in Salem and surrounding areas. Expert in teaching nervous learners with patience and building their confidence. Deep knowledge of RTO rules, road safety, and defensive driving. His personalized teaching approach ensures every student learns to drive safely and confidently.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
+    image: photo13,
     qualifications: [
       language === 'ta' ? 'RTO சான்றிதழ் பயிற்சியாளர்' : 'RTO Certified Trainer',
       language === 'ta' ? 'பாதுகாப்பு ஓட்டுநர் சான்றிதழ்' : 'Defensive Driving Certified',
@@ -112,7 +118,7 @@ const About = () => {
     },
     {
       type: language === 'ta' ? 'கனரக வாகனம் (லாரி/டிரக்)' : 'Heavy Vehicle (Truck/Lorry)',
-      icon: Truck,
+      icon: TruckIcon,
       models: language === 'ta'
         ? 'டாடா 407, மஹிந்திரா போல்ரோ பிக்-அப், ஆஷோக் லேலண்ட்'
         : 'Tata 407, Mahindra Bolero Pickup, Ashok Leyland',

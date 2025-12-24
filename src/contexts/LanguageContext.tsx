@@ -22,6 +22,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.stories': 'Gallery',
     'nav.contact': 'Contact',
     'nav.alumni': 'Alumni',
+    'nav.trafficRules': 'Traffic Rules',
     'nav.callNow': 'Call Now',
     'nav.whatsapp': 'WhatsApp',
 
@@ -161,6 +162,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.stories': 'கேலரி',
     'nav.contact': 'தொடர்புகொள்ள',
     'nav.alumni': 'முன்னாள் மாணவர்கள்',
+    'nav.trafficRules': 'போக்குவரத்து விதிகள்',
     'nav.callNow': 'அழைக்கவும்',
     'nav.whatsapp': 'வாட்ஸ்அப்',
 

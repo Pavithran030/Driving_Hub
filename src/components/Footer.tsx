@@ -57,6 +57,15 @@ const Footer = () => {
               <Link to="/contact" className="block text-background/80 hover:text-background transition-colors text-sm">
                 {t('nav.contact')}
               </Link>
+              <a 
+                href="https://parivahan.gov.in/parivahan//en/content/know-your-traffic-signs" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-background/80 hover:text-background transition-colors text-sm group"
+              >
+                <span className="inline-block group-hover:animate-pulse">⚠️</span>
+                {t('nav.trafficRules')}
+              </a>
             </nav>
           </div>
 

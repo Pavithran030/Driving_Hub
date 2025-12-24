@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Camera, Quote, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import photo12 from '@/assets/photo-12.jpg';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -10,8 +11,8 @@ const Stories = () => {
   const { t, language } = useLanguage();
 
   const galleryImages = [
+    { alt: 'Training session', image: photo12 },
     { alt: 'Student with car', placeholder: true },
-    { alt: 'Training session', placeholder: true },
     { alt: 'RTO test success', placeholder: true },
     { alt: 'Classroom training', placeholder: true },
     { alt: 'Training vehicle', placeholder: true },
@@ -94,9 +95,17 @@ const Stories = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {galleryImages.map((image, index) => (
               <div key={index} className="aspect-square bg-muted rounded-2xl overflow-hidden relative group">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Camera className="w-12 h-12 text-muted-foreground/40" />
-                </div>
+                {image.image ? (
+                  <img 
+                    src={image.image} 
+                    alt={image.alt}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Camera className="w-12 h-12 text-muted-foreground/40" />
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors" />
               </div>
             ))}
