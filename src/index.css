@@ -1,0 +1,213 @@
+/* stylelint-disable at-rule-no-unknown */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Mukta+Malar:wght@200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 120 100% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 120 60% 35%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 30% 94%;
+    --muted-foreground: 215 20% 45%;
+
+    --accent: 35 95% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 88%;
+    --input: 214 32% 88%;
+    --ring: 120 100% 25%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(120 100% 25%) 0%, hsl(130 80% 35%) 50%, hsl(140 70% 40%) 100%);
+    --card-shadow: 0 4px 20px -4px hsl(120 100% 25% / 0.15);
+    --card-shadow-hover: 0 8px 30px -4px hsl(120 100% 25% / 0.25);
+    --success: 120 100% 25%;
+    --success-light: 120 60% 95%;
+    --whatsapp: 142 70% 45%;
+    --call: 120 100% 30%;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 120 70% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 120 60% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 35 90% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 120 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Mukta Malar font weight utilities */
+  .mukta-malar-extralight {
+    font-family: "Mukta Malar", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+
+  .mukta-malar-light {
+    font-family: "Mukta Malar", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .mukta-malar-regular {
+    font-family: "Mukta Malar", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .mukta-malar-medium {
+    font-family: "Mukta Malar", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .mukta-malar-semibold {
+    font-family: "Mukta Malar", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .mukta-malar-bold {
+    font-family: "Mukta Malar", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .mukta-malar-extrabold {
+    font-family: "Mukta Malar", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+  .gradient-hero {
+    background: var(--hero-gradient);
+  }
+
+  .card-elevated {
+    box-shadow: var(--card-shadow);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .card-elevated:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  .btn-whatsapp {
+    @apply bg-[hsl(var(--whatsapp))] text-white hover:bg-[hsl(142_70%_40%)] transition-all duration-200;
+  }
+
+  .btn-call {
+    @apply bg-[hsl(var(--call))] text-white hover:bg-[hsl(120_100%_25%)] transition-all duration-200;
+  }
+
+  .section-padding {
+    @apply py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--hero-gradient);
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from { 
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to { 
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
