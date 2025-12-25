@@ -1,15 +1,87 @@
-import { useState } from 'react';
-import { Phone, Mail, MapPin, MessageCircle, Clock, Send, CheckCircle } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Phone, Send, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useToast } from '@/hooks/use-toast';
 
+// Icon Components
+function PhoneIcon({ className }: { className?: string }) {
+  return (
+    <lord-icon
+      src="https://cdn.lordicon.com/nnzfcuqw.json"
+      trigger="loop"
+      delay="500"
+      stroke="bold"
+      colors="primary:#848484,secondary:#30e849"
+      className={className}
+      style={{ width: '100%', height: '100%' }}>
+    </lord-icon>
+  );
+}
+
+function MailIcon({ className }: { className?: string }) {
+  return (
+    <lord-icon
+      src="https://cdn.lordicon.com/tcbkwnah.json"
+      trigger="loop"
+      delay="500"
+      stroke="bold"
+      colors="primary:#121331,secondary:#30e849,tertiary:#ebe6ef"
+      className={className}
+      style={{ width: '100%', height: '100%' }}>
+    </lord-icon>
+  );
+}
+
+function WhatsAppIcon({ className }: { className?: string }) {
+  return (
+    <lord-icon
+      src="https://cdn.lordicon.com/vmxvhdko.json"
+      trigger="loop"
+      delay="500"
+      stroke="bold"
+      colors="primary:#b4b4b4,secondary:#30e849"
+      className={className}
+      style={{ width: '100%', height: '100%' }}>
+    </lord-icon>
+  );
+}
+
+function LocationIcon({ className }: { className?: string }) {
+  return (
+    <lord-icon
+      src="https://cdn.lordicon.com/onmwuuox.json"
+      trigger="loop"
+      delay="500"
+      stroke="bold"
+      colors="primary:#b4b4b4,secondary:#30e849"
+      className={className}
+      style={{ width: '100%', height: '100%' }}>
+    </lord-icon>
+  );
+}
+
+function ClockIcon({ className }: { className?: string }) {
+  return (
+    <lord-icon
+      src="https://cdn.lordicon.com/warimioc.json"
+      trigger="loop"
+      delay="500"
+      stroke="bold"
+      colors="primary:#b4b4b4,secondary:#30e849"
+      className={className}
+      style={{ width: '100%', height: '100%' }}>
+    </lord-icon>
+  );
+}
+
 const Contact = () => {
   const { t, language } = useLanguage();
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -19,24 +91,67 @@ const Contact = () => {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Scroll to form if hash is present
+  useEffect(() => {
+    if (window.location.hash === '#enquiry-form') {
+      setTimeout(() => {
+        const element = document.getElementById('enquiry-form');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!formData.name || !formData.phone) {
       toast({
-        title: language === 'ta' ? 'பிழை' : 'Error',
-        description: language === 'ta' ? 'பெயர் மற்றும் தொலைபேசி எண் தேவை' : 'Name and phone number are required',
+        description: language === 'ta' ? '⚠️ பெயர் மற்றும் தொலைபேசி எண் தேவை' : '⚠️ Name and phone number required',
         variant: 'destructive',
       });
       return;
     }
     
-    // Simulate form submission
-    setIsSubmitted(true);
-    toast({
-      title: language === 'ta' ? 'வெற்றி!' : 'Success!',
-      description: t('contact.form.success'),
-    });
+    setIsSubmitting(true);
+    
+    try {
+      // Replace with your Google Apps Script Web App URL
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwv05po1mERN4v6va4xu8gQ4azsGuhLaEgpRDoCBM4CGAmlokuquMunvlLOkmj74Lvi/exec';
+      
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      // Note: no-cors mode doesn't allow reading response, but submission works
+      setIsSubmitted(true);
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        service: '',
+        time: '',
+        message: '',
+      });
+      
+      toast({
+        description: language === 'ta' ? '✅ உங்கள் விசாரணை வெற்றிகரமாக சமர்ப்பிக்கப்பட்டது!' : '✅ Your enquiry has been submitted successfully!',
+      });
+      
+    } catch (error) {
+      toast({
+        description: language === 'ta' ? '❌ சமர்ப்பிப்பில் தவறு. மீண்டும் முயற்சிக்கவும்' : '❌ Submission failed. Please try again.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -80,7 +195,7 @@ const Contact = () => {
               <div className="space-y-6">
                 <a href="tel:+919876543210" className="flex items-start gap-4 p-4 bg-card rounded-xl card-elevated border border-border/50 hover:border-primary/30 transition-colors">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                    <Phone className="w-6 h-6 text-primary" />
+                    <PhoneIcon className="w-full h-full" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{t('footer.phone')}</h3>
@@ -91,7 +206,7 @@ const Contact = () => {
 
                 <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 p-4 bg-card rounded-xl card-elevated border border-border/50 hover:border-whatsapp/30 transition-colors">
                   <div className="w-12 h-12 rounded-xl bg-whatsapp/10 flex items-center justify-center shrink-0">
-                    <MessageCircle className="w-6 h-6 text-whatsapp" />
+                    <WhatsAppIcon className="w-full h-full" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{t('nav.whatsapp')}</h3>
@@ -101,7 +216,7 @@ const Contact = () => {
 
                 <a href="mailto:info@salemdrivingschool.com" className="flex items-start gap-4 p-4 bg-card rounded-xl card-elevated border border-border/50 hover:border-primary/30 transition-colors">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                    <Mail className="w-6 h-6 text-primary" />
+                    <MailIcon className="w-full h-full" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{t('footer.email')}</h3>
@@ -111,7 +226,7 @@ const Contact = () => {
 
                 <div className="flex items-start gap-4 p-4 bg-card rounded-xl card-elevated border border-border/50">
                   <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
-                    <MapPin className="w-6 h-6 text-secondary" />
+                    <LocationIcon className="w-full h-full" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{t('footer.address')}</h3>
@@ -121,7 +236,7 @@ const Contact = () => {
 
                 <div className="flex items-start gap-4 p-4 bg-card rounded-xl card-elevated border border-border/50">
                   <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                    <Clock className="w-6 h-6 text-accent" />
+                    <ClockIcon className="w-full h-full" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{language === 'ta' ? 'நேரம்' : 'Timings'}</h3>
@@ -152,7 +267,7 @@ const Contact = () => {
             </div>
 
             {/* Enquiry Form */}
-            <div>
+            <div id="enquiry-form" className="scroll-mt-24">
               <div className="bg-card rounded-2xl p-6 md:p-8 card-elevated border border-border/50">
                 <h2 className="text-2xl font-bold text-foreground mb-6">
                   {t('cta.enquiry')}
@@ -265,9 +380,11 @@ const Contact = () => {
                       />
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full">
+                    <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                       <Send className="w-5 h-5" />
-                      {t('contact.form.submit')}
+                      {isSubmitting 
+                        ? (language === 'ta' ? 'சமர்ப்பிக்கிறது...' : 'Submitting...') 
+                        : t('contact.form.submit')}
                     </Button>
                   </form>
                 )}

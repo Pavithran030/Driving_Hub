@@ -1,6 +1,4 @@
-import { FileText, RefreshCw, MapPin, Copy, CheckCircle, ClipboardList, Shield, AlertCircle } from 'lucide-react';
-import carIcon from '@/assets/car-icon.svg';
-import truckIcon from '@/assets/truck-icon.svg';
+import { Copy, CheckCircle, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
@@ -8,13 +6,122 @@ import Footer from '@/components/Footer';
 import CTASection from '@/components/CTASection';
 import { Link } from 'react-router-dom';
 
-const CarIcon = ({ className }: { className?: string }) => (
-  <img src={carIcon} alt="Car" className={className || "w-full h-full"} />
-);
+// Icon Components
+function RenewalIcon({ className }: { className?: string }) {
+  return (
+    <lord-icon
+      src="https://cdn.lordicon.com/umnbegnd.json"
+      trigger="loop"
+      delay="500"
+      stroke="bold"
+      colors="primary:#242424,secondary:#16c72e"
+      className={className}
+      style={{ width: '100%', height: '100%' }}>
+    </lord-icon>
+  );
+}
 
-const TruckIcon = ({ className }: { className?: string }) => (
-  <img src={truckIcon} alt="Truck" className={className || "w-full h-full"} />
-);
+function LocationIcon({ className }: { className?: string }) {
+  return (
+    <lord-icon
+      src="https://cdn.lordicon.com/onmwuuox.json"
+      trigger="loop"
+      delay="500"
+      stroke="bold"
+      colors="primary:#848484,secondary:#30e849"
+      className={className}
+      style={{ width: '100%', height: '100%' }}>
+    </lord-icon>
+  );
+}
+
+function PaperworkIcon({ className }: { className?: string }) {
+  return (
+    <lord-icon
+      src="https://cdn.lordicon.com/fikcyfpp.json"
+      trigger="loop"
+      delay="500"
+      stroke="bold"
+      colors="primary:#545454,secondary:#16c72e"
+      className={className}
+      style={{ width: '100%', height: '100%' }}>
+    </lord-icon>
+  );
+}
+
+function PermanentLicenceIcon({ className }: { className?: string }) {
+  return (
+    <lord-icon
+      src="https://cdn.lordicon.com/fsstjlds.json"
+      trigger="loop"
+      delay="500"
+      stroke="bold"
+      colors="primary:#30e849"
+      className={className}
+      style={{ width: '100%', height: '100%' }}>
+    </lord-icon>
+  );
+}
+
+function InsuranceIcon({ className }: { className?: string }) {
+  return (
+    <lord-icon
+      src="https://cdn.lordicon.com/apbwvyeg.json"
+      trigger="loop"
+      delay="500"
+      colors="primary:#242424,secondary:#30e849"
+      className={className}
+      style={{ width: '100%', height: '100%' }}>
+    </lord-icon>
+  );
+}
+
+function CarIcon({ className }: { className?: string }) {
+  return (
+    <div className="w-full h-full flex items-center justify-center">
+      <lord-icon
+        src="https://cdn.lordicon.com/njpauqoc.json"
+        trigger="loop"
+        delay="50"
+        stroke="bold"
+        state="loop-cycle"
+        colors="primary:#242426,secondary:#242626"
+        className={className}
+        style={{ width: '100%', height: '100%' }}>
+      </lord-icon>
+    </div>
+  );
+}
+
+function TruckIcon({ className }: { className?: string }) {
+  return (
+    <div className="w-full h-full bg-gray-100 rounded-lg flex items-center justify-center">
+      <lord-icon
+        src="https://cdn.lordicon.com/byupthur.json"
+        trigger="loop"
+        state="loop-cycle"
+        colors="primary:#121331,secondary:#000000"
+        className={className}
+        style={{ width: '85%', height: '85%' }}>
+      </lord-icon>
+    </div>
+  );
+}
+
+function DocumentIcon({ className }: { className?: string }) {
+  return (
+    <div className="w-full h-full flex items-center justify-center">
+      <lord-icon
+        src="https://cdn.lordicon.com/tbabdzcy.json"
+        trigger="loop"
+        delay="150"
+        stroke="bold"
+        className={className}
+        style={{ width: '100%', height: '100%' }}>
+      </lord-icon>
+    </div>
+  );
+}
 
 const Services = () => {
   const { t, language } = useLanguage();
@@ -51,7 +158,7 @@ const Services = () => {
 
   const licenceServices = [
     {
-      icon: FileText,
+      icon: DocumentIcon,
       title: t('licence.learner.title'),
       docs: language === 'ta'
         ? ['வயது சான்று (ஆதார்/பிறப்பு சான்றிதழ்)', 'முகவரி சான்று', 'பாஸ்போர்ட் புகைப்படம்', 'மருத்துவ சான்றிதழ் (வயது 40+)']
@@ -61,7 +168,7 @@ const Services = () => {
         : ['Share your documents & details', 'We fill online forms', 'RTO slot booking', 'You visit RTO for test'],
     },
     {
-      icon: CheckCircle,
+      icon: PermanentLicenceIcon,
       title: t('licence.permanent.title'),
       docs: language === 'ta'
         ? ['கற்றல் உரிமம் (30 நாட்கள் பழமை)', 'வயது & முகவரி சான்று', 'புகைப்படம்']
@@ -71,7 +178,7 @@ const Services = () => {
         : ['Test preparation training', 'RTO slot booking', 'Support on test day', 'Application status tracking'],
     },
     {
-      icon: RefreshCw,
+      icon: RenewalIcon,
       title: t('licence.renewal.title'),
       docs: language === 'ta'
         ? ['பழைய உரிமம்', 'முகவரி சான்று', 'புகைப்படம்', 'மருத்துவ சான்றிதழ் (வயது 40+)']
@@ -81,7 +188,7 @@ const Services = () => {
         : ['Submit documents', 'Online application', 'RTO verification', 'New licence delivery'],
     },
     {
-      icon: MapPin,
+      icon: LocationIcon,
       title: t('licence.address.title'),
       docs: language === 'ta'
         ? ['தற்போதைய உரிமம்', 'புதிய முகவரி சான்று', 'புகைப்படம்']
@@ -90,49 +197,32 @@ const Services = () => {
         ? ['ஆவணங்களை சேகரித்தல்', 'ஆன்லைன் விண்ணப்பம்', 'புதுப்பிக்கப்பட்ட உரிமம்']
         : ['Document collection', 'Online application', 'Updated licence'],
     },
-    {
-      icon: Copy,
-      title: t('licence.duplicate.title'),
-      docs: language === 'ta'
-        ? ['FIR நகல் (தொலைந்தால்)', 'புகைப்படம்', 'முகவரி சான்று']
-        : ['FIR copy (if lost)', 'Photo', 'Address proof'],
-      process: language === 'ta'
-        ? ['FIR பெறுதல்', 'விண்ணப்பம் சமர்ப்பிப்பு', 'நகல் உரிமம் பெறுதல்']
-        : ['Get FIR', 'Submit application', 'Get duplicate licence'],
-    },
   ];
 
   const rcServices = [
     {
-      icon: RefreshCw,
+      icon: RenewalIcon,
       title: t('rc.renewal.title'),
       docs: language === 'ta'
         ? ['பழைய RC', 'காப்பீடு நகல்', 'PUC சான்றிதழ்', 'முகவரி சான்று']
         : ['Old RC', 'Insurance copy', 'PUC certificate', 'Address proof'],
     },
     {
-      icon: MapPin,
+      icon: LocationIcon,
       title: t('rc.address.title'),
       docs: language === 'ta'
         ? ['தற்போதைய RC', 'புதிய முகவரி சான்று', 'காப்பீடு']
         : ['Current RC', 'New address proof', 'Insurance'],
     },
     {
-      icon: ClipboardList,
+      icon: PaperworkIcon,
       title: t('rc.hypothecation.title'),
       docs: language === 'ta'
         ? ['RC புத்தகம்', 'கடன் மூடல் கடிதம்', 'NOC from bank']
         : ['RC book', 'Loan closure letter', 'NOC from bank'],
     },
     {
-      icon: Copy,
-      title: t('rc.duplicate.title'),
-      docs: language === 'ta'
-        ? ['FIR நகல்', 'காப்பீடு நகல்', 'முகவரி சான்று']
-        : ['FIR copy', 'Insurance copy', 'Address proof'],
-    },
-    {
-      icon: Shield,
+      icon: InsuranceIcon,
       title: t('rc.puc.title'),
       docs: language === 'ta'
         ? ['வாகன ஆவணங்கள்', 'பழைய PUC/காப்பீடு']
@@ -179,8 +269,8 @@ const Services = () => {
           <div className="grid lg:grid-cols-3 gap-6">
             {drivingCourses.map((course, index) => (
               <div key={index} className="bg-card rounded-2xl p-6 md:p-8 card-elevated border border-border/50">
-                <div className="w-14 h-14 rounded-xl gradient-hero flex items-center justify-center mb-5">
-                  <course.icon className="w-7 h-7 text-white" />
+                <div className="w-14 h-14 rounded-xl bg-white/80 border-2 border-purple-200 flex items-center justify-center mb-5">
+                  <course.icon className="w-full h-full" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-2">{course.title}</h3>
                 <p className="text-muted-foreground text-sm mb-2">{course.forWhom}</p>
@@ -197,7 +287,7 @@ const Services = () => {
                 </ul>
                 
                 <Button className="w-full" asChild>
-                  <Link to="/contact">{t('courses.enquire')}</Link>
+                  <a href="/contact#enquiry-form">{t('courses.enquire')}</a>
                 </Button>
               </div>
             ))}

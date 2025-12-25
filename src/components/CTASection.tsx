@@ -1,5 +1,4 @@
-import { Phone, MessageCircle, FileText } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -17,22 +16,40 @@ const CTASection = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button variant="hero" size="xl" asChild>
-            <a href="tel:+919876543210">
-              <Phone className="w-5 h-5" />
-              {t('cta.call')}
+            <a href="tel:+919876543210" className="flex items-center gap-2">
+              <div className="w-5 h-5">
+                <lord-icon
+                  src="https://cdn.lordicon.com/nnzfcuqw.json"
+                  trigger="loop"
+                  delay="500"
+                  stroke="bold"
+                  colors="primary:#ffffff,secondary:#30e849"
+                  style={{ width: '100%', height: '100%' }}>
+                </lord-icon>
+              </div>
+              <span>{t('cta.call')}</span>
             </a>
           </Button>
           <Button variant="hero" size="xl" asChild>
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="w-5 h-5" />
-              {t('cta.whatsapp')}
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              <div className="w-5 h-5">
+                <lord-icon
+                  src="https://cdn.lordicon.com/vmxvhdko.json"
+                  trigger="loop"
+                  delay="500"
+                  stroke="bold"
+                  colors="primary:#ffffff,secondary:#30e849"
+                  style={{ width: '100%', height: '100%' }}>
+                </lord-icon>
+              </div>
+              <span>{t('cta.whatsapp')}</span>
             </a>
           </Button>
           <Button variant="heroOutline" size="xl" asChild>
-            <Link to="/contact">
+            <a href="/contact#enquiry-form">
               <FileText className="w-5 h-5" />
               {t('cta.enquiry')}
-            </Link>
+            </a>
           </Button>
         </div>
       </div>

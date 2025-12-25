@@ -156,9 +156,9 @@ const Stories = () => {
                 : 'Did you learn with us? Share your experience!'}
             </p>
             <Button size="lg" asChild>
-              <Link to="/contact">
+              <a href="/contact#enquiry-form">
                 {language === 'ta' ? 'கருத்து பகிர' : 'Share Feedback'}
-              </Link>
+              </a>
             </Button>
           </div>
         </div>

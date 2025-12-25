@@ -1,18 +1,84 @@
 import { Phone, Mail, MapPin, Clock, Award, Users, ShieldCheck, Settings, CheckCircle } from 'lucide-react';
-import carIcon from '@/assets/car-icon.svg';
-import truckIcon from '@/assets/truck-icon.svg';
 import photo13 from '@/assets/photo-13.jpg';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CTASection from '@/components/CTASection';
 
+const PhoneIcon = ({ className }: { className?: string }) => (
+  <lord-icon
+    src="https://cdn.lordicon.com/nnzfcuqw.json"
+    trigger="loop"
+    delay="500"
+    stroke="bold"
+    colors="primary:#848484,secondary:#30e849"
+    className={className}
+    style={{ width: '100%', height: '100%' }}>
+  </lord-icon>
+);
+
+const MailIcon = ({ className }: { className?: string }) => (
+  <lord-icon
+    src="https://cdn.lordicon.com/tcbkwnah.json"
+    trigger="loop"
+    delay="500"
+    stroke="bold"
+    colors="primary:#121331,secondary:#30e849,tertiary:#ebe6ef"
+    className={className}
+    style={{ width: '100%', height: '100%' }}>
+  </lord-icon>
+);
+
+const LocationIcon = ({ className }: { className?: string }) => (
+  <lord-icon
+    src="https://cdn.lordicon.com/onmwuuox.json"
+    trigger="loop"
+    delay="500"
+    stroke="bold"
+    colors="primary:#b4b4b4,secondary:#30e849"
+    className={className}
+    style={{ width: '100%', height: '100%' }}>
+  </lord-icon>
+);
+
+const ClockIcon = ({ className }: { className?: string }) => (
+  <lord-icon
+    src="https://cdn.lordicon.com/warimioc.json"
+    trigger="loop"
+    delay="500"
+    stroke="bold"
+    colors="primary:#b4b4b4,secondary:#30e849"
+    className={className}
+    style={{ width: '100%', height: '100%' }}>
+  </lord-icon>
+);
+
 const CarIcon = ({ className }: { className?: string }) => (
-  <img src={carIcon} alt="Car" className={className || "w-full h-full"} />
+  <div className="w-full h-full flex items-center justify-center">
+    <lord-icon
+      src="https://cdn.lordicon.com/njpauqoc.json"
+      trigger="loop"
+      delay="50"
+      stroke="bold"
+      state="loop-cycle"
+      colors="primary:#7c3aed,secondary:#6366f1"
+      className={className}
+      style={{ width: '100%', height: '100%' }}>
+    </lord-icon>
+  </div>
 );
 
 const TruckIcon = ({ className }: { className?: string }) => (
-  <img src={truckIcon} alt="Truck" className={className || "w-full h-full"} />
+  <div className="w-full h-full bg-gray-100 rounded-lg flex items-center justify-center">
+    <lord-icon
+      src="https://cdn.lordicon.com/byupthur.json"
+      trigger="loop"
+      state="loop-cycle"
+      colors="primary:#121331,secondary:#000000"
+      className={className}
+      style={{ width: '85%', height: '85%' }}>
+    </lord-icon>
+  </div>
 );
 
 const About = () => {
@@ -26,8 +92,8 @@ const About = () => {
     specialty: language === 'ta' ? 'ஆரம்பநிலையாளர்கள் & பெண்கள்' : 'Beginners & Women Learners',
     languages: language === 'ta' ? 'தமிழ், ஆங்கிலம்' : 'Tamil, English',
     bio: language === 'ta' 
-      ? 'செல்வராஜ் 2008 ஆம் ஆண்டில் முருகன் டிரைவிங் நிறுவனத்தை நிறுவினார். 20 ஆண்டுகளுக்கும் மேலான அனுபவத்துடன், சேலம் மற்றும் சுற்றுவட்டார பகுதிகளில் 10,000+ மாணவர்களுக்கு பயிற்சி அளித்துள்ளார். பயமுள்ள மாணவர்களுக்கு நம்பிக்கையூட்டும் விதத்தில் கற்பிப்பதில் நிபுணர். RTO விதிகள், சாலை பாதுகாப்பு மற்றும் பாதுகாப்பு ஓட்டுதலில் ஆழ்ந்த அறிவு பெற்றவர். அவரது தனிப்பயனாக்கப்பட்ட கற்பித்தல் முறையானது ஒவ்வொரு மாணவரும் தன்னம்பிக்கையுடன் பாதுகாப்பாக ஓட்ட உறுதி செய்கிறது.'
-      : 'Selvaraj founded Murugan Driving Institute in 2008. With over 20 years of experience, he has trained 10,000+ students in Salem and surrounding areas. Expert in teaching nervous learners with patience and building their confidence. Deep knowledge of RTO rules, road safety, and defensive driving. His personalized teaching approach ensures every student learns to drive safely and confidently.',
+      ? 'முருகன் 2008 ஆம் ஆண்டில் முருகன் டிரைவிங் நிறுவனத்தை நிறுவினார். 20 ஆண்டுகளுக்கும் மேலான அனுபவத்துடன், சேலம் மற்றும் சுற்றுவட்டார பகுதிகளில் 10,000+ மாணவர்களுக்கு பயிற்சி அளித்துள்ளார். பயமுள்ள மாணவர்களுக்கு நம்பிக்கையூட்டும் விதத்தில் கற்பிப்பதில் நிபுணர். RTO விதிகள், சாலை பாதுகாப்பு மற்றும் பாதுகாப்பு ஓட்டுதலில் ஆழ்ந்த அறிவு பெற்றவர். அவரது தனிப்பயனாக்கப்பட்ட கற்பித்தல் முறையானது ஒவ்வொரு மாணவரும் தன்னம்பிக்கையுடன் பாதுகாப்பாக ஓட்ட உறுதி செய்கிறது.'
+      : 'Murugan founded Murugan Driving Institute in 2008. With over 20 years of experience, he has trained 10,000+ students in Salem and surrounding areas. Expert in teaching nervous learners with patience and building their confidence. Deep knowledge of RTO rules, road safety, and defensive driving. His personalized teaching approach ensures every student learns to drive safely and confidently.',
     image: photo13,
     qualifications: [
       language === 'ta' ? 'RTO சான்றிதழ் பயிற்சியாளர்' : 'RTO Certified Trainer',
@@ -90,10 +156,10 @@ const About = () => {
   ];
 
   const stats = [
-    { value: '20+', label: language === 'ta' ? 'ஆண்டுகள் அனுபவம்' : 'Years Experience' },
-    { value: '10,000+', label: language === 'ta' ? 'மாணவர்கள்' : 'Students Trained' },
+    { value: '10+', label: language === 'ta' ? 'ஆண்டுகள் அனுபவம்' : 'Years Experience' },
+    { value: '500+', label: language === 'ta' ? 'மாணவர்கள்' : 'Students Trained' },
     { value: '95%', label: language === 'ta' ? 'தேர்வு வெற்றி' : 'Pass Rate' },
-    { value: '4', label: language === 'ta' ? 'நிபுணர் பயிற்சியாளர்கள்' : 'Expert Trainers' },
+    { value: '2', label: language === 'ta' ? 'நிபுணர் பயிற்சியாளர்கள்' : 'Expert Trainers' },
   ];
 
   // Training Vehicles
@@ -184,7 +250,9 @@ const About = () => {
                 <span className="text-sm font-medium text-foreground">{language === 'ta' ? 'பாதுகாப்பு முதல்' : 'Safety First'}</span>
               </div>
               <div className="flex items-center gap-3 bg-card p-4 rounded-xl border border-border/50">
-                <CarIcon className="w-8 h-8 text-purple-600 flex-shrink-0" />
+                <div className="w-8 h-8 bg-white/50 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <CarIcon className="w-full h-full" />
+                </div>
                 <span className="text-sm font-medium text-foreground">{language === 'ta' ? 'இரட்டை கட்டுப்பாடு கார்' : 'Dual Control Cars'}</span>
               </div>
               <div className="flex items-center gap-3 bg-card p-4 rounded-xl border border-border/50">
@@ -219,12 +287,15 @@ const About = () => {
             <div className="bg-card rounded-3xl overflow-hidden card-elevated border-2 border-primary/20">
               <div className="flex flex-col md:flex-row">
                 {/* Image */}
-                <div className="md:w-1/3 h-64 md:h-auto flex-shrink-0">
-                  <img 
-                    src={owner.image} 
-                    alt={owner.name}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="md:w-1/3 relative overflow-hidden">
+                  <div className="aspect-[3/4] md:aspect-auto md:h-full">
+                    <img 
+                      src={owner.image} 
+                      alt={owner.name}
+                      className="w-full h-full object-cover object-center"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
                 
                 {/* Details */}
@@ -362,7 +433,9 @@ const About = () => {
                     />
                     <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
                       <div className="flex items-center gap-2">
-                        <IconComponent className="w-5 h-5 text-primary" />
+                        <div className="w-5 h-5">
+                          <IconComponent />
+                        </div>
                         <span className="font-semibold text-foreground text-sm">{vehicle.type}</span>
                       </div>
                     </div>
@@ -433,7 +506,7 @@ const About = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center md:text-left">
               <div className="flex flex-col md:flex-row items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                  <Phone className="w-6 h-6 text-primary" />
+                  <PhoneIcon className="w-full h-full" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{language === 'ta' ? 'தொலைபேசி' : 'Phone'}</p>
@@ -442,7 +515,7 @@ const About = () => {
               </div>
               <div className="flex flex-col md:flex-row items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-secondary" />
+                  <MailIcon className="w-full h-full" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{language === 'ta' ? 'மின்னஞ்சல்' : 'Email'}</p>
@@ -451,7 +524,7 @@ const About = () => {
               </div>
               <div className="flex flex-col md:flex-row items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-primary" />
+                  <LocationIcon className="w-full h-full" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{language === 'ta' ? 'முகவரி' : 'Address'}</p>
@@ -460,7 +533,7 @@ const About = () => {
               </div>
               <div className="flex flex-col md:flex-row items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center">
-                  <Clock className="w-6 h-6 text-secondary" />
+                  <ClockIcon className="w-full h-full" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{language === 'ta' ? 'நேரம்' : 'Timings'}</p>

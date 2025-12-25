@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, MessageCircle, FileText, ClipboardList, Award, Clock, Shield, Users, MapPin, Heart } from 'lucide-react';
-import carIcon from '@/assets/car-icon.svg';
-import truckIcon from '@/assets/truck-icon.svg';
+import { Phone, MessageCircle, ClipboardList, Shield, Users, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
@@ -12,12 +10,97 @@ import WhyChooseCard from '@/components/WhyChooseCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import heroBg from '@/assets/hero-bg.jpg';
 
+const PaperworkIcon = ({ className }: { className?: string }) => (
+  <lord-icon
+    src="https://cdn.lordicon.com/fikcyfpp.json"
+    trigger="loop"
+    delay="500"
+    stroke="bold"
+    colors="primary:#545454,secondary:#16c72e"
+    className={className}
+    style={{ width: '100%', height: '100%' }}>
+  </lord-icon>
+);
+
 const CarIcon = ({ className }: { className?: string }) => (
-  <img src={carIcon} alt="Car" className={className || "w-full h-full"} />
+  <div className="w-full h-full flex items-center justify-center">
+    <lord-icon
+      src="https://cdn.lordicon.com/njpauqoc.json"
+      trigger="loop"
+      delay="50"
+      stroke="bold"
+      state="loop-cycle"
+      colors="primary:#7c3aed,secondary:#6366f1"
+      className={className}
+      style={{ width: '100%', height: '100%' }}>
+    </lord-icon>
+  </div>
 );
 
 const TruckIcon = ({ className }: { className?: string }) => (
-  <img src={truckIcon} alt="Truck" className={className || "w-full h-full"} />
+  <div className="w-full h-full bg-gray-100 rounded-lg flex items-center justify-center">
+    <lord-icon
+      src="https://cdn.lordicon.com/byupthur.json"
+      trigger="loop"
+      state="loop"
+      colors="primary:#121331,secondary:#000000"
+      className={className}
+      style={{ width: '85%', height: '85%' }}>
+    </lord-icon>
+  </div>
+);
+
+const DocumentIcon = ({ className }: { className?: string }) => (
+  <div className="w-full h-full flex items-center justify-center">
+    <lord-icon
+      src="https://cdn.lordicon.com/tbabdzcy.json"
+      trigger="loop"
+      delay="150"
+      stroke="bold"
+      className={className}
+      style={{ width: '100%', height: '100%' }}>
+    </lord-icon>
+  </div>
+);
+
+const ExperienceIcon = ({ className }: { className?: string }) => (
+  <div className="w-full h-full flex items-center justify-center">
+    <lord-icon
+      src="https://cdn.lordicon.com/vttzorhw.json"
+      trigger="loop"
+      delay="2000"
+      colors="primary:#8930e8,secondary:#16c72e"
+      className={className}
+      style={{ width: '100%', height: '100%' }}>
+    </lord-icon>
+  </div>
+);
+
+const ClockIcon = ({ className }: { className?: string }) => (
+  <div className="w-full h-full flex items-center justify-center">
+    <lord-icon
+      src="https://cdn.lordicon.com/warimioc.json"
+      trigger="loop"
+      delay="500"
+      stroke="bold"
+      colors="primary:#8930e8,secondary:#16c72e"
+      className={className}
+      style={{ width: '100%', height: '100%' }}>
+    </lord-icon>
+  </div>
+);
+
+const FriendlyIcon = ({ className }: { className?: string }) => (
+  <div className="w-full h-full flex items-center justify-center">
+    <lord-icon
+      src="https://cdn.lordicon.com/nvsfzbop.json"
+      trigger="loop"
+      delay="500"
+      colors="primary:#8930e8,secondary:#30e849"
+      className={className}
+      style={{ width: '100%', height: '100%' }}>
+    </lord-icon>
+  </div>
 );
 
 const Index = () => {
@@ -26,15 +109,15 @@ const Index = () => {
   const services = [
     { icon: CarIcon, title: t('services.driving.title'), description: t('services.driving.desc') },
     { icon: TruckIcon, title: t('services.heavyvehicle.title'), description: t('services.heavyvehicle.desc') },
-    { icon: FileText, title: t('services.licence.title'), description: t('services.licence.desc') },
-    { icon: ClipboardList, title: t('services.rc.title'), description: t('services.rc.desc') },
+    { icon: DocumentIcon, title: t('services.licence.title'), description: t('services.licence.desc') },
+    { icon: PaperworkIcon, title: t('services.rc.title'), description: t('services.rc.desc') },
   ];
 
   const whyChoose = [
-    { icon: Award, title: t('why.experience'), description: t('why.experience.desc') },
+    { icon: ExperienceIcon, title: t('why.experience'), description: t('why.experience.desc') },
     { icon: CarIcon, title: t('why.safety'), description: t('why.safety.desc') },
-    { icon: Clock, title: t('why.flexible'), description: t('why.flexible.desc') },
-    { icon: Heart, title: t('why.friendly'), description: t('why.friendly.desc') },
+    { icon: ClockIcon, title: t('why.flexible'), description: t('why.flexible.desc') },
+    { icon: FriendlyIcon, title: t('why.friendly'), description: t('why.friendly.desc') },
   ];
 
   const testimonials = [
@@ -162,7 +245,7 @@ const Index = () => {
               <div className="bg-card rounded-3xl p-8 card-elevated border border-border/50">
                 <div className="grid grid-cols-2 gap-6 text-center">
                   <div className="p-4">
-                    <div className="text-4xl md:text-5xl font-bold text-primary mb-2">15+</div>
+                    <div className="text-4xl md:text-5xl font-bold text-primary mb-2">10+</div>
                     <p className="text-muted-foreground text-sm">{language === 'ta' ? 'ஆண்டுகள் அனுபவம்' : 'Years Experience'}</p>
                   </div>
                   <div className="p-4">
@@ -170,11 +253,11 @@ const Index = () => {
                     <p className="text-muted-foreground text-sm">{language === 'ta' ? 'தேர்ச்சி விகிதம்' : 'Pass Rate'}</p>
                   </div>
                   <div className="p-4">
-                    <div className="text-4xl md:text-5xl font-bold text-primary mb-2">5000+</div>
+                    <div className="text-4xl md:text-5xl font-bold text-primary mb-2">500+</div>
                     <p className="text-muted-foreground text-sm">{language === 'ta' ? 'மாணவர்கள்' : 'Students Trained'}</p>
                   </div>
                   <div className="p-4">
-                    <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">10+</div>
+                    <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">2+</div>
                     <p className="text-muted-foreground text-sm">{language === 'ta' ? 'பயிற்சி வாகனங்கள்' : 'Training Vehicles'}</p>
                   </div>
                 </div>

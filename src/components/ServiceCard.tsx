@@ -14,8 +14,8 @@ const ServiceCard = ({ icon: Icon, title, description, link = '/services' }: Ser
       to={link}
       className="group block bg-card rounded-2xl p-6 md:p-8 card-elevated border border-border/50"
     >
-      <div className="w-14 h-14 rounded-xl gradient-hero flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 p-2">
-        <Icon className="w-full h-full text-white" />
+      <div className="w-14 h-14 rounded-xl bg-white border-2 border-purple-200 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:border-purple-400 transition-all duration-300 p-2.5 shadow-sm">
+        <Icon className="w-full h-full text-purple-600" />
       </div>
       <h3 className="text-lg md:text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
         {title}

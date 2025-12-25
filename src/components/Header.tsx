@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, MessageCircle } from 'lucide-react';
-import carIcon from '@/assets/car-icon.svg';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageToggle from './LanguageToggle';
@@ -28,7 +27,15 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform p-1.5">
-              <img src={carIcon} alt="Car" className="w-full h-full" />
+              <lord-icon
+                src="https://cdn.lordicon.com/njpauqoc.json"
+                trigger="loop"
+                delay="50"
+                stroke="bold"
+                state="loop-cycle"
+                colors="primary:#ffffff,secondary:#f0f0f0"
+                style={{ width: '100%', height: '100%' }}>
+              </lord-icon>
             </div>
             <div>
               <h1 className="font-bold text-base md:text-lg lg:text-xl text-foreground leading-tight">{t('brand.name')}</h1>
@@ -60,14 +67,32 @@ const Header = () => {
             {/* Desktop CTA Buttons */}
             <div className="hidden md:flex items-center gap-2">
               <Button variant="call" size="sm" asChild>
-                <a href="tel:+919876543210">
-                  <Phone className="w-4 h-4" />
+                <a href="tel:+919876543210" className="flex items-center gap-2">
+                  <div className="w-4 h-4">
+                    <lord-icon
+                      src="https://cdn.lordicon.com/nnzfcuqw.json"
+                      trigger="loop"
+                      delay="500"
+                      stroke="bold"
+                      colors="primary:#ffffff,secondary:#30e849"
+                      style={{ width: '100%', height: '100%' }}>
+                    </lord-icon>
+                  </div>
                   <span className="hidden xl:inline">{t('nav.callNow')}</span>
                 </a>
               </Button>
               <Button variant="whatsapp" size="sm" asChild>
-                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-4 h-4" />
+                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <div className="w-4 h-4">
+                    <lord-icon
+                      src="https://cdn.lordicon.com/vmxvhdko.json"
+                      trigger="loop"
+                      delay="500"
+                      stroke="bold"
+                      colors="primary:#ffffff,secondary:#30e849"
+                      style={{ width: '100%', height: '100%' }}>
+                    </lord-icon>
+                  </div>
                   <span className="hidden xl:inline">{t('nav.whatsapp')}</span>
                 </a>
               </Button>
@@ -106,15 +131,33 @@ const Header = () => {
               {/* Mobile CTA Buttons */}
               <div className="flex gap-3 pt-4 mt-4 border-t border-border">
                 <Button variant="call" size="lg" className="flex-1" asChild>
-                  <a href="tel:+919876543210">
-                    <Phone className="w-5 h-5" />
-                    {t('nav.callNow')}
+                  <a href="tel:+919876543210" className="flex items-center gap-2">
+                    <div className="w-5 h-5">
+                      <lord-icon
+                        src="https://cdn.lordicon.com/nnzfcuqw.json"
+                        trigger="loop"
+                        delay="500"
+                        stroke="bold"
+                        colors="primary:#ffffff,secondary:#30e849"
+                        style={{ width: '100%', height: '100%' }}>
+                      </lord-icon>
+                    </div>
+                    <span>{t('nav.callNow')}</span>
                   </a>
                 </Button>
                 <Button variant="whatsapp" size="lg" className="flex-1" asChild>
-                  <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="w-5 h-5" />
-                    {t('nav.whatsapp')}
+                  <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                    <div className="w-5 h-5">
+                      <lord-icon
+                        src="https://cdn.lordicon.com/vmxvhdko.json"
+                        trigger="loop"
+                        delay="500"
+                        stroke="bold"
+                        colors="primary:#ffffff,secondary:#30e849"
+                        style={{ width: '100%', height: '100%' }}>
+                      </lord-icon>
+                    </div>
+                    <span>{t('nav.whatsapp')}</span>
                   </a>
                 </Button>
               </div>
