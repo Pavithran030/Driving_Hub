@@ -396,10 +396,8 @@ const Services = () => {
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {/* Traffic Rules */}
-            <a
-              href="https://parivahan.gov.in/parivahan//en/content/know-your-traffic-signs"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/traffic-rules"
               className="group bg-card rounded-2xl p-6 md:p-8 card-elevated border border-border/50 hover:border-primary/50 transition-all"
             >
               <div className="flex items-start gap-4">
@@ -421,7 +419,7 @@ const Services = () => {
                   </span>
                 </div>
               </div>
-            </a>
+            </Link>
 
             {/* RTO Information */}
             <a

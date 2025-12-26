@@ -180,15 +180,13 @@ const Index = () => {
                 </a>
               </Button>
               <Button variant="heroOutline" size="xl" asChild>
-                <a 
-                  href="https://parivahan.gov.in/parivahan//en/content/know-your-traffic-signs"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link 
+                  to="/traffic-rules"
                   className="flex items-center gap-2"
                 >
                   <span className="text-xl">⚠️</span>
                   {language === 'ta' ? 'போக்குவரத்து விதிகள்' : 'Traffic Rules'}
-                </a>
+                </Link>
               </Button>
             </div>
           </div>
