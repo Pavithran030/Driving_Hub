@@ -174,7 +174,7 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
               <Button variant="hero" size="xl" asChild>
-                <a href="tel:+919876543210">
+                <a href="tel:+919865068850">
                   <Phone className="w-5 h-5" />
                   {t('hero.callWhatsapp')}
                 </a>

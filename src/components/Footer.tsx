@@ -78,7 +78,7 @@ const Footer = () => {
           <div className="space-y-4 lg:col-span-4">
             <h4 className="font-semibold text-lg">{t('contact.title')}</h4>
             <div className="space-y-3">
-              <a href="tel:+919876543210" className="flex items-start gap-3 text-background/80 hover:text-background transition-colors text-sm group">
+              <a href="tel:+919865068850" className="flex items-start gap-3 text-background/80 hover:text-background transition-colors text-sm group">
                 <div className="w-5 h-5 mt-0.5 shrink-0">
                   <lord-icon
                     src="https://cdn.lordicon.com/nnzfcuqw.json"
@@ -89,11 +89,11 @@ const Footer = () => {
                     style={{ width: '100%', height: '100%' }}>
                   </lord-icon>
                 </div>
-                <span>+91 98765 43210</span>
+                <span>+91 98650 68850</span>
               </a>
-              <a href="mailto:info@salemdrivingschool.com" className="flex items-start gap-3 text-background/80 hover:text-background transition-colors text-sm">
+              <a href="mailto:sriarimuruga@gmail.com" className="flex items-start gap-3 text-background/80 hover:text-background transition-colors text-sm">
                 <Mail className="w-5 h-5 mt-0.5 shrink-0" />
-                <span>info@salemdrivingschool.com</span>
+                <span>sriarimuruga@gmail.com</span>
               </a>
               <a 
                 href="https://www.google.com/maps/place/Murugan+Driving+Institute+Omalur/@11.7399019,78.0388109,17z/data=!3m1!4b1!4m6!3m5!1s0x3babf9915423bf39:0x49d79817ec0bc856!8m2!3d11.7399019!4d78.0413858!16s%2Fg%2F11vsjg0vc0?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D"
