@@ -67,7 +67,7 @@ const Header = () => {
             {/* Desktop CTA Buttons */}
             <div className="hidden md:flex items-center gap-2">
               <Button variant="call" size="sm" asChild>
-                <a href="tel:+919876543210" className="flex items-center gap-2">
+                <a href="tel:+919865068850" className="flex items-center gap-2">
                   <div className="w-4 h-4">
                     <lord-icon
                       src="https://cdn.lordicon.com/nnzfcuqw.json"
@@ -82,7 +82,7 @@ const Header = () => {
                 </a>
               </Button>
               <Button variant="whatsapp" size="sm" asChild>
-                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <a href="https://wa.me/919865068850" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <div className="w-4 h-4">
                     <lord-icon
                       src="https://cdn.lordicon.com/vmxvhdko.json"
@@ -131,7 +131,7 @@ const Header = () => {
               {/* Mobile CTA Buttons */}
               <div className="flex gap-3 pt-4 mt-4 border-t border-border">
                 <Button variant="call" size="lg" className="flex-1" asChild>
-                  <a href="tel:+919876543210" className="flex items-center gap-2">
+                  <a href="tel:+919865068850" className="flex items-center gap-2">
                     <div className="w-5 h-5">
                       <lord-icon
                         src="https://cdn.lordicon.com/nnzfcuqw.json"
@@ -146,7 +146,7 @@ const Header = () => {
                   </a>
                 </Button>
                 <Button variant="whatsapp" size="lg" className="flex-1" asChild>
-                  <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <a href="https://wa.me/919865068850" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                     <div className="w-5 h-5">
                       <lord-icon
                         src="https://cdn.lordicon.com/vmxvhdko.json"

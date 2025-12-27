@@ -16,7 +16,7 @@ const CTASection = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button variant="hero" size="xl" asChild>
-            <a href="tel:+919876543210" className="flex items-center gap-2">
+            <a href="tel:+919865068850" className="flex items-center gap-2">
               <div className="w-5 h-5">
                 <lord-icon
                   src="https://cdn.lordicon.com/nnzfcuqw.json"
@@ -31,7 +31,7 @@ const CTASection = () => {
             </a>
           </Button>
           <Button variant="hero" size="xl" asChild>
-            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+            <a href="https://wa.me/919865068850" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
               <div className="w-5 h-5">
                 <lord-icon
                   src="https://cdn.lordicon.com/vmxvhdko.json"

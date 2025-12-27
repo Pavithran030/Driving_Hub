@@ -510,7 +510,7 @@ const About = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{language === 'ta' ? 'தொலைபேசி' : 'Phone'}</p>
-                  <p className="font-semibold text-foreground">+91 98765 43210</p>
+                  <p className="font-semibold text-foreground">+91 98650 68850</p>
                 </div>
               </div>
               <div className="flex flex-col md:flex-row items-center gap-3">

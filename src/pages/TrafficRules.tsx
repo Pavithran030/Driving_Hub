@@ -5,13 +5,14 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CTASection from '@/components/CTASection';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { trafficSignsData } from '@/data/trafficSignsData';
 
 const TrafficRules = () => {
   const { language } = useLanguage();
   const [activeTab, setActiveTab] = useState('signs');
 
-  // Traffic Signs Data
-  const trafficSigns = [
+  // Old Traffic Signs Data - Kept for reference
+  const oldTrafficSigns = [
     {
       category: language === 'ta' ? 'தடை அறிகுறிகள்' : 'Prohibitory Signs',
       signs: [
@@ -167,28 +168,62 @@ const TrafficRules = () => {
 
             {/* Traffic Signs Tab */}
             <TabsContent value="signs" className="space-y-8">
-              {trafficSigns.map((category, idx) => (
-                <div key={idx} className="space-y-6">
-                  <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <AlertTriangle className="w-6 h-6 text-primary" />
+              {/* Comprehensive Road Safety Signs - All Categories */}
+              <div className="space-y-8">
+                {trafficSignsData.map((category, categoryIdx) => (
+                  <div key={categoryIdx} className="space-y-6">
+                    <div className={`bg-gradient-to-r ${
+                      categoryIdx === 0 ? 'from-red-500/10 to-blue-500/10' :
+                      categoryIdx === 1 ? 'from-yellow-500/10 to-orange-500/10' :
+                      'from-blue-500/10 to-green-500/10'
+                    } rounded-2xl p-6 border ${
+                      categoryIdx === 0 ? 'border-red-500/20' :
+                      categoryIdx === 1 ? 'border-yellow-500/20' :
+                      'border-blue-500/20'
+                    }`}>
+                      <h3 className="text-2xl font-bold text-foreground mb-2">
+                        {language === 'ta' ? category.categoryTa : category.category}
+                      </h3>
+                      <p className="text-muted-foreground text-sm">
+                        {language === 'ta' ? category.descriptionTa : category.description}
+                      </p>
                     </div>
-                    {category.category}
-                  </h2>
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {category.signs.map((sign, signIdx) => (
-                      <div 
-                        key={signIdx}
-                        className="bg-card rounded-xl p-6 card-elevated border border-border/50 hover:border-primary/30 transition-all text-center"
-                      >
-                        <div className="text-5xl mb-3">{sign.icon}</div>
-                        <h3 className="font-semibold text-foreground mb-2">{sign.name}</h3>
-                        <p className="text-sm text-muted-foreground">{sign.description}</p>
-                      </div>
-                    ))}
+
+                    <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                      {category.signs.map((sign, signIdx) => (
+                        <div 
+                          key={signIdx}
+                          className={`bg-card rounded-xl p-5 card-elevated border-2 hover:scale-105 transition-all text-center ${
+                            sign.color === 'red' ? 'border-red-500/30 hover:border-red-500' :
+                            sign.color === 'blue' ? 'border-blue-500/30 hover:border-blue-500' :
+                            sign.color === 'yellow' ? 'border-yellow-500/30 hover:border-yellow-500' :
+                            sign.color === 'green' ? 'border-green-500/30 hover:border-green-500' :
+                            'border-border/50 hover:border-primary/50'
+                          }`}
+                        >
+                          {sign.image ? (
+                            <div className="w-24 h-24 mx-auto mb-3 flex items-center justify-center">
+                              <img 
+                                src={sign.image} 
+                                alt={sign.name} 
+                                className="w-full h-full object-contain"
+                              />
+                            </div>
+                          ) : (
+                            <div className="text-5xl mb-3">{sign.icon}</div>
+                          )}
+                          <h4 className="font-bold text-foreground mb-2">
+                            {language === 'ta' ? sign.nameTa : sign.name}
+                          </h4>
+                          <p className="text-xs text-muted-foreground">
+                            {language === 'ta' ? sign.descriptionTa : sign.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
               
               {/* Traffic Signal Lights */}
               <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl p-6 md:p-8 border border-border/50">
@@ -265,21 +300,43 @@ const TrafficRules = () => {
                 </h3>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   <div className="bg-card rounded-xl p-4 text-center">
-                    <div className="text-3xl mb-2">🚓</div>
+                    <div className="flex justify-center mb-2">
+                      <lord-icon
+                        src="https://cdn.lordicon.com/qbzffdfv.json"
+                        trigger="loop"
+                        delay="200"
+                        style={{ width: '80px', height: '80px' }}>
+                      </lord-icon>
+                    </div>
                     <p className="text-sm text-muted-foreground mb-1">
                       {language === 'ta' ? 'காவல்துறை' : 'Police'}
                     </p>
                     <p className="text-2xl font-bold text-foreground">100</p>
                   </div>
                   <div className="bg-card rounded-xl p-4 text-center">
-                    <div className="text-3xl mb-2">🚑</div>
+                    <div className="flex justify-center mb-2">
+                      <lord-icon
+                        src="https://cdn.lordicon.com/mhwzfwxu.json"
+                        trigger="loop"
+                        delay="200"
+                        colors="primary:#545454,secondary:#e83a30,tertiary:#7166ee,quaternary:#e4e4e4"
+                        style={{ width: '80px', height: '80px' }}>
+                      </lord-icon>
+                    </div>
                     <p className="text-sm text-muted-foreground mb-1">
                       {language === 'ta' ? 'ஆம்புலன்ஸ்' : 'Ambulance'}
                     </p>
                     <p className="text-2xl font-bold text-foreground">108</p>
                   </div>
                   <div className="bg-card rounded-xl p-4 text-center">
-                    <div className="text-3xl mb-2">🚒</div>
+                    <div className="flex justify-center mb-2">
+                      <lord-icon
+                        src="https://cdn.lordicon.com/fbiayvzm.json"
+                        trigger="loop"
+                        delay="200"
+                        style={{ width: '80px', height: '80px' }}>
+                      </lord-icon>
+                    </div>
                     <p className="text-sm text-muted-foreground mb-1">
                       {language === 'ta' ? 'தீயணைப்பு' : 'Fire Service'}
                     </p>

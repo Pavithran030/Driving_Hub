@@ -193,18 +193,18 @@ const Contact = () => {
               </h2>
               
               <div className="space-y-6">
-                <a href="tel:+919876543210" className="flex items-start gap-4 p-4 bg-card rounded-xl card-elevated border border-border/50 hover:border-primary/30 transition-colors">
+                <a href="tel:+919865068850" className="flex items-start gap-4 p-4 bg-card rounded-xl card-elevated border border-border/50 hover:border-primary/30 transition-colors">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                     <PhoneIcon className="w-full h-full" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{t('footer.phone')}</h3>
-                    <p className="text-muted-foreground">+91 98765 43210</p>
-                    <p className="text-muted-foreground">+91 98765 43211</p>
+                    <p className="text-muted-foreground">+91 98650 68850</p>
+                    <p className="text-muted-foreground">+91 98434 68850</p>
                   </div>
                 </a>
 
-                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 p-4 bg-card rounded-xl card-elevated border border-border/50 hover:border-whatsapp/30 transition-colors">
+                <a href="https://wa.me/919865068850" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 p-4 bg-card rounded-xl card-elevated border border-border/50 hover:border-whatsapp/30 transition-colors">
                   <div className="w-12 h-12 rounded-xl bg-whatsapp/10 flex items-center justify-center shrink-0">
                     <WhatsAppIcon className="w-full h-full" />
                   </div>
@@ -214,13 +214,13 @@ const Contact = () => {
                   </div>
                 </a>
 
-                <a href="mailto:info@salemdrivingschool.com" className="flex items-start gap-4 p-4 bg-card rounded-xl card-elevated border border-border/50 hover:border-primary/30 transition-colors">
+                <a href="mailto:sriarimuruga@gmail.com" className="flex items-start gap-4 p-4 bg-card rounded-xl card-elevated border border-border/50 hover:border-primary/30 transition-colors">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                     <MailIcon className="w-full h-full" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{t('footer.email')}</h3>
-                    <p className="text-muted-foreground">info@salemdrivingschool.com</p>
+                    <p className="text-muted-foreground">sriarimuruga@gmail.com</p>
                   </div>
                 </a>
 
@@ -314,7 +314,7 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 98650 68850"
                       />
                     </div>
 
