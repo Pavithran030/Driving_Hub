@@ -17,7 +17,7 @@ const CTASection = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button variant="hero" size="xl" asChild>
             <a href="tel:+919865068850" className="flex items-center gap-2">
-              <div className="w-5 h-5">
+              <div className="w-6 h-6">
                 <lord-icon
                   src="https://cdn.lordicon.com/nnzfcuqw.json"
                   trigger="loop"
@@ -32,7 +32,7 @@ const CTASection = () => {
           </Button>
           <Button variant="hero" size="xl" asChild>
             <a href="https://wa.me/919865068850" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-              <div className="w-5 h-5">
+              <div className="w-6 h-6">
                 <lord-icon
                   src="https://cdn.lordicon.com/vmxvhdko.json"
                   trigger="loop"
@@ -47,7 +47,7 @@ const CTASection = () => {
           </Button>
           <Button variant="heroOutline" size="xl" asChild>
             <a href="/contact#enquiry-form">
-              <FileText className="w-5 h-5" />
+              <FileText className="w-6 h-6" />
               {t('cta.enquiry')}
             </a>
           </Button>

@@ -4,6 +4,7 @@ import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageToggle from './LanguageToggle';
+import logo from '@/assets/logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,16 +27,13 @@ const Header = () => {
         <div className="flex items-center justify-between h-14 md:h-16 lg:h-20 px-3 md:px-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform p-1.5">
-              <lord-icon
-                src="https://cdn.lordicon.com/njpauqoc.json"
-                trigger="loop"
-                delay="50"
-                stroke="bold"
-                state="loop-cycle"
-                colors="primary:#ffffff,secondary:#f0f0f0"
-                style={{ width: '100%', height: '100%' }}>
-              </lord-icon>
+            <div className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 flex items-center justify-center group-hover:scale-105 transition-transform">
+              <img 
+                src={logo} 
+                alt={t('brand.name')} 
+                className="w-full h-full object-contain"
+                loading="eager"
+              />
             </div>
             <div>
               <h1 className="font-bold text-base md:text-lg lg:text-xl text-foreground leading-tight">{t('brand.name')}</h1>
@@ -68,7 +66,7 @@ const Header = () => {
             <div className="hidden md:flex items-center gap-2">
               <Button variant="call" size="sm" asChild>
                 <a href="tel:+919865068850" className="flex items-center gap-2">
-                  <div className="w-4 h-4">
+                  <div className="w-5 h-5">
                     <lord-icon
                       src="https://cdn.lordicon.com/nnzfcuqw.json"
                       trigger="loop"
@@ -83,7 +81,7 @@ const Header = () => {
               </Button>
               <Button variant="whatsapp" size="sm" asChild>
                 <a href="https://wa.me/919865068850" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                  <div className="w-4 h-4">
+                  <div className="w-5 h-5">
                     <lord-icon
                       src="https://cdn.lordicon.com/vmxvhdko.json"
                       trigger="loop"
@@ -132,7 +130,7 @@ const Header = () => {
               <div className="flex gap-3 pt-4 mt-4 border-t border-border">
                 <Button variant="call" size="lg" className="flex-1" asChild>
                   <a href="tel:+919865068850" className="flex items-center gap-2">
-                    <div className="w-5 h-5">
+                    <div className="w-6 h-6">
                       <lord-icon
                         src="https://cdn.lordicon.com/nnzfcuqw.json"
                         trigger="loop"
@@ -147,7 +145,7 @@ const Header = () => {
                 </Button>
                 <Button variant="whatsapp" size="lg" className="flex-1" asChild>
                   <a href="https://wa.me/919865068850" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                    <div className="w-5 h-5">
+                    <div className="w-6 h-6">
                       <lord-icon
                         src="https://cdn.lordicon.com/vmxvhdko.json"
                         trigger="loop"

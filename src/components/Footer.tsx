@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube, Signpost } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import logo from '@/assets/logo.png';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -12,16 +13,13 @@ const Footer = () => {
           {/* About */}
           <div className="space-y-4 lg:col-span-3">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center p-2">
-                <lord-icon
-                  src="https://cdn.lordicon.com/njpauqoc.json"
-                  trigger="loop"
-                  delay="50"
-                  stroke="bold"
-                  state="loop-cycle"
-                  colors="primary:#ffffff,secondary:#f0f0f0"
-                  style={{ width: '100%', height: '100%' }}>
-                </lord-icon>
+              <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center">
+                <img 
+                  src={logo} 
+                  alt={t('brand.name')} 
+                  className="w-full h-full object-contain"
+                  loading="lazy"
+                />
               </div>
               <div>
                 <h3 className="font-bold text-lg">{t('brand.name')}</h3>
@@ -68,7 +66,7 @@ const Footer = () => {
                 to="/traffic-rules"
                 className="flex items-center gap-2 text-background/80 hover:text-background transition-colors text-sm group"
               >
-                <span className="inline-block group-hover:animate-pulse">⚠️</span>
+                <Signpost className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 {t('nav.trafficRules')}
               </Link>
             </nav>

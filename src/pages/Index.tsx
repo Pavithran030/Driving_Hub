@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, MessageCircle, ClipboardList, Shield, Users, MapPin } from 'lucide-react';
+import { Phone, MessageCircle, ClipboardList, Shield, Users, MapPin, Signpost } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
@@ -8,6 +8,7 @@ import CTASection from '@/components/CTASection';
 import ServiceCard from '@/components/ServiceCard';
 import WhyChooseCard from '@/components/WhyChooseCard';
 import TestimonialCard from '@/components/TestimonialCard';
+import { SEO } from '@/components/SEO';
 import heroBg from '@/assets/hero-bg.jpg';
 
 const PaperworkIcon = ({ className }: { className?: string }) => (
@@ -125,7 +126,7 @@ const Index = () => {
       name: language === 'ta' ? 'கவிதா எஸ்' : 'Kavitha S.',
       location: language === 'ta' ? 'அத்திப்பட்டி' : 'Atthipatty',
       course: language === 'ta' ? 'ஆரம்ப கார் பயிற்சி' : 'Beginner Car Course',
-      quote: language === 'ta' 
+      quote: language === 'ta'
         ? 'நான் மிகவும் பயமாக இருந்தேன், ஆனால் இங்கு மிகவும் பொறுமையாக கற்றுக்கொடுத்தார்கள். இப்போது தன்னம்பிக்கையுடன் வாகனம் ஓட்டுகிறேன்!'
         : 'I was very nervous, but the instructors were patient. Now I drive confidently every day!',
     },
@@ -149,15 +150,23 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={language === 'ta' ? "முருகன் டிரைவிங் இன்ஸ்டிடியூட் | சிறந்த கார் பயிற்சி சேலம்" : "Murugan Driving Institute | Best Driving School in Salem"}
+        description={language === 'ta'
+          ? "சேலம், தமிழ்நாட்டில் சிறந்த கார் ஓட்டுநர் பயிற்சி. ஆரம்பநிலை மற்றும் பெண்களுக்கான சிறப்பு வகுப்புகள். உரிமம் மற்றும் RC சேவைகள்."
+          : "Learn to drive with confidence at Murugan Driving Institute. Best car driving classes in Salem, Tamil Nadu. RTO licence and RC services available."}
+        keywords="driving school salem, car driving classes salem, ladies driving school salem, driving licence agent salem, rto services salem"
+        url="/"
+      />
       <Header />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
-          <img 
-            src={heroBg} 
-            alt="Driving School" 
+          <img
+            src={heroBg}
+            alt="Driving School"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
@@ -175,16 +184,16 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
               <Button variant="hero" size="xl" asChild>
                 <a href="tel:+919865068850">
-                  <Phone className="w-5 h-5" />
+                  <Phone className="w-6 h-6" />
                   {t('hero.callWhatsapp')}
                 </a>
               </Button>
               <Button variant="heroOutline" size="xl" asChild>
-                <Link 
+                <Link
                   to="/traffic-rules"
                   className="flex items-center gap-2"
                 >
-                  <span className="text-xl">⚠️</span>
+                  <Signpost className="w-6 h-6" />
                   {language === 'ta' ? 'போக்குவரத்து விதிகள்' : 'Traffic Rules'}
                 </Link>
               </Button>

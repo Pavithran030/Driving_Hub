@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, Clock, Award, Users, ShieldCheck, Settings, CheckCircle } from 'lucide-react';
 import photo13 from '@/assets/photo-13.jpg';
+import { SEO } from '@/components/SEO';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -91,7 +92,7 @@ const About = () => {
     experience: language === 'ta' ? '20 ஆண்டுகள் அனுபவம்' : '20 years experience',
     specialty: language === 'ta' ? 'ஆரம்பநிலையாளர்கள் & பெண்கள்' : 'Beginners & Women Learners',
     languages: language === 'ta' ? 'தமிழ், ஆங்கிலம்' : 'Tamil, English',
-    bio: language === 'ta' 
+    bio: language === 'ta'
       ? 'முருகன் 2008 ஆம் ஆண்டில் முருகன் டிரைவிங் நிறுவனத்தை நிறுவினார். 20 ஆண்டுகளுக்கும் மேலான அனுபவத்துடன், சேலம் மற்றும் சுற்றுவட்டார பகுதிகளில் 10,000+ மாணவர்களுக்கு பயிற்சி அளித்துள்ளார். பயமுள்ள மாணவர்களுக்கு நம்பிக்கையூட்டும் விதத்தில் கற்பிப்பதில் நிபுணர். RTO விதிகள், சாலை பாதுகாப்பு மற்றும் பாதுகாப்பு ஓட்டுதலில் ஆழ்ந்த அறிவு பெற்றவர். அவரது தனிப்பயனாக்கப்பட்ட கற்பித்தல் முறையானது ஒவ்வொரு மாணவரும் தன்னம்பிக்கையுடன் பாதுகாப்பாக ஓட்ட உறுதி செய்கிறது.'
       : 'Murugan founded Murugan Driving Institute in 2008. With over 20 years of experience, he has trained 10,000+ students in Salem and surrounding areas. Expert in teaching nervous learners with patience and building their confidence. Deep knowledge of RTO rules, road safety, and defensive driving. His personalized teaching approach ensures every student learns to drive safely and confidently.',
     image: photo13,
@@ -111,7 +112,7 @@ const About = () => {
       experience: language === 'ta' ? '15 ஆண்டுகள் அனுபவம்' : '15 years experience',
       specialty: language === 'ta' ? 'RTO தேர்வு தயாரிப்பு' : 'RTO Test Preparation',
       languages: language === 'ta' ? 'தமிழ், ஆங்கிலம், தெலுங்கு' : 'Tamil, English, Telugu',
-      bio: language === 'ta' 
+      bio: language === 'ta'
         ? 'ராஜேஷ் RTO தேர்வு தயாரிப்பில் நிபுணர். தேர்வில் எதிர்பார்க்கப்படும் அனைத்து நிலைகளையும் முழுமையாக பயிற்சி அளிப்பார். அவரது மாணவர்களின் வெற்றி விகிதம் 95% க்கும் அதிகம்.'
         : 'Rajesh specializes in RTO test preparation. He thoroughly trains students on all aspects expected in the test. His students have a success rate of over 95%.',
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
@@ -127,7 +128,7 @@ const About = () => {
       experience: language === 'ta' ? '10 ஆண்டுகள் அனுபவம்' : '10 years experience',
       specialty: language === 'ta' ? 'பெண் மாணவர்களுக்கு சிறப்பு பயிற்சி' : 'Specialized Training for Women',
       languages: language === 'ta' ? 'தமிழ், ஆங்கிலம்' : 'Tamil, English',
-      bio: language === 'ta' 
+      bio: language === 'ta'
         ? 'பிரேமா பெண் மாணவர்களுக்கு சிறப்பு பயிற்சி அளிக்கிறார். அவர்களுக்கு வசதியான மற்றும் பாதுகாப்பான சூழலில் கற்பிக்கிறார். பெண்கள் தனியாக ஓட்டுவதில் நம்பிக்கை கொள்ள உதவுகிறார்.'
         : 'Prema provides specialized training for women learners. She teaches in a comfortable and safe environment. Helps women gain confidence to drive independently.',
       image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face',
@@ -143,7 +144,7 @@ const About = () => {
       experience: language === 'ta' ? '12 ஆண்டுகள் அனுபவம்' : '12 years experience',
       specialty: language === 'ta' ? 'நெடுஞ்சாலை & நீண்ட தூர ஓட்டம்' : 'Highway & Long Distance Driving',
       languages: language === 'ta' ? 'தமிழ், ஆங்கிலம், கன்னடம்' : 'Tamil, English, Kannada',
-      bio: language === 'ta' 
+      bio: language === 'ta'
         ? 'குமார் நெடுஞ்சாலை ஓட்டம் மற்றும் நீண்ட தூர பயணத்தில் நிபுணர். வேகமான சாலைகளில் பாதுகாப்பாக ஓட்டுவது, ஓவர்டேக்கிங், இரவு ஓட்டம் ஆகியவற்றில் பயிற்சி அளிக்கிறார்.'
         : 'Kumar specializes in highway driving and long distance travel. He trains on safe driving at high speeds, overtaking, and night driving.',
       image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face',
@@ -167,7 +168,7 @@ const About = () => {
     {
       type: language === 'ta' ? 'இலகு வாகனம் (கார்)' : 'Light Vehicle (Car)',
       icon: CarIcon,
-      models: language === 'ta' 
+      models: language === 'ta'
         ? 'மாருதி சுவிஃப்ட், ஹூண்டாய் i20, டாடா டியாகோ'
         : 'Maruti Swift, Hyundai i20, Tata Tiago',
       features: [
@@ -204,6 +205,13 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={language === 'ta' ? "எங்களைப் பற்றி | முருகன் டிரைவிங் இன்ஸ்டிடியூட்" : "About Us | Murugan Driving Institute Salem"}
+        description={language === 'ta'
+          ? "20+ வருட அனுபவம் கொண்ட சேலத்தின் முன்னணி டிரைவிங் பள்ளி. எங்கள் அனுபவம் வாய்ந்த பயிற்சியாளர்கள் மற்றும் வசதிகள் பற்றி தெரிந்து கொள்ளுங்கள்."
+          : "Learn about Murugan Driving Institute, Salem's trusted driving school with 20+ years of experience. Meet our expert instructors and see our training vehicles."}
+        url="/about"
+      />
       <Header />
 
       {/* Page Hero */}
@@ -213,7 +221,7 @@ const About = () => {
             {language === 'ta' ? 'எங்களைப் பற்றி' : 'About Us'}
           </h1>
           <p className="text-white/90 text-lg max-w-2xl mx-auto">
-            {language === 'ta' 
+            {language === 'ta'
               ? 'சேலத்தின் நம்பகமான ஓட்டுநர் பயிற்சி நிறுவனம்'
               : 'Salem\'s Trusted Driving Training Institute'}
           </p>
@@ -228,11 +236,11 @@ const About = () => {
               {language === 'ta' ? 'எங்கள் நிறுவனம்' : 'Our Institute'}
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              {language === 'ta' 
+              {language === 'ta'
                 ? '20 ஆண்டுகளுக்கும் மேலான அனுபவத்துடன், சேலம் மற்றும் சுற்றுவட்டார பகுதிகளில் ஆயிரக்கணக்கான மாணவர்களுக்கு தரமான ஓட்டுநர் பயிற்சி வழங்கி வருகிறோம். எங்கள் இலக்கு - ஒவ்வொரு மாணவரும் நம்பிக்கையுடன் பாதுகாப்பாக வாகனம் ஓட்ட கற்றுக்கொள்வது.'
                 : 'With over 20 years of experience, we have been providing quality driving training to thousands of students in Salem and surrounding areas. Our goal - every student learns to drive safely with confidence.'}
             </p>
-            
+
             {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
               {stats.map((stat, index) => (
@@ -276,12 +284,12 @@ const About = () => {
               {language === 'ta' ? 'நிறுவனர்' : 'Our Founder'}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              {language === 'ta' 
+              {language === 'ta'
                 ? 'முருகன் டிரைவிங் நிறுவனத்தின் நிறுவனர் மற்றும் தலைமை பயிற்சியாளர்'
                 : 'Founder and Chief Instructor of Murugan Driving Institute'}
             </p>
           </div>
-          
+
           {/* Owner Card */}
           <div className="max-w-4xl mx-auto">
             <div className="bg-card rounded-3xl overflow-hidden card-elevated border-2 border-primary/20">
@@ -289,22 +297,22 @@ const About = () => {
                 {/* Image */}
                 <div className="md:w-1/3 relative overflow-hidden">
                   <div className="aspect-[3/4] md:aspect-auto md:h-full">
-                    <img 
-                      src={owner.image} 
+                    <img
+                      src={owner.image}
                       alt={owner.name}
                       className="w-full h-full object-cover object-center"
                       loading="lazy"
                     />
                   </div>
                 </div>
-                
+
                 {/* Details */}
                 <div className="flex-1 p-6 md:p-8">
                   <div className="mb-4">
                     <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">{owner.name}</h3>
                     <p className="text-primary font-semibold text-lg">{owner.role}</p>
                   </div>
-                  
+
                   <div className="flex flex-wrap gap-2 mb-4">
                     <span className="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium">
                       {owner.experience}
@@ -313,11 +321,11 @@ const About = () => {
                       {owner.languages}
                     </span>
                   </div>
-                  
+
                   <p className="text-muted-foreground leading-relaxed mb-6">
                     {owner.bio}
                   </p>
-                  
+
                   <div className="border-t border-border/50 pt-4">
                     <p className="text-sm text-muted-foreground mb-3 font-semibold">
                       {language === 'ta' ? 'சிறப்புகள் & சான்றிதழ்கள்:' : 'Specializations & Certifications:'}
@@ -346,32 +354,32 @@ const About = () => {
               {language === 'ta' ? 'எங்கள் பயிற்சியாளர்கள் குழு' : 'Our Instructors Team'}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              {language === 'ta' 
+              {language === 'ta'
                 ? 'அனுபவம் வாய்ந்த, நட்பான மற்றும் பொறுமையான பயிற்சியாளர்கள்'
                 : 'Experienced, friendly and patient professional instructors'}
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {instructors.map((instructor, index) => (
               <div key={index} className="bg-card rounded-2xl overflow-hidden card-elevated border border-border/50 hover:border-primary/30 transition-all">
                 <div className="flex flex-col">
                   {/* Image */}
                   <div className="h-48 w-full flex-shrink-0">
-                    <img 
-                      src={instructor.image} 
+                    <img
+                      src={instructor.image}
                       alt={instructor.name}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  
+
                   {/* Details */}
                   <div className="p-5">
                     <div className="mb-3">
                       <h3 className="text-lg font-bold text-foreground">{instructor.name}</h3>
                       <p className="text-primary font-medium text-sm">{instructor.role}</p>
                     </div>
-                    
+
                     <div className="flex flex-wrap gap-2 mb-3">
                       <span className="bg-primary/10 text-primary px-2.5 py-1 rounded-full text-xs font-medium">
                         {instructor.experience}
@@ -380,11 +388,11 @@ const About = () => {
                         {instructor.languages}
                       </span>
                     </div>
-                    
+
                     <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
                       {instructor.bio}
                     </p>
-                    
+
                     <div className="border-t border-border/50 pt-3">
                       <p className="text-xs text-muted-foreground mb-2 font-semibold">
                         {language === 'ta' ? 'சிறப்புகள்:' : 'Specializations:'}
@@ -413,7 +421,7 @@ const About = () => {
               {language === 'ta' ? 'எங்கள் பயிற்சி வாகனங்கள்' : 'Our Training Vehicles'}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              {language === 'ta' 
+              {language === 'ta'
                 ? 'நவீன, நன்கு பராமரிக்கப்பட்ட வாகனங்கள் பாதுகாப்பான கற்றலுக்காக'
                 : 'Modern, well-maintained vehicles for safe and comfortable learning'}
             </p>
@@ -426,8 +434,8 @@ const About = () => {
                 <div key={index} className="bg-card rounded-3xl overflow-hidden card-elevated border border-border/50 hover:border-primary/20 transition-all">
                   {/* Vehicle Image */}
                   <div className="h-56 relative overflow-hidden">
-                    <img 
-                      src={vehicle.image} 
+                    <img
+                      src={vehicle.image}
                       alt={vehicle.type}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                     />
@@ -519,7 +527,7 @@ const About = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">{language === 'ta' ? 'மின்னஞ்சல்' : 'Email'}</p>
-                  <p className="font-semibold text-foreground">info@example.com</p>
+                  <p className="font-semibold text-foreground">sriarimuruga@gmail.com</p>
                 </div>
               </div>
               <div className="flex flex-col md:flex-row items-center gap-3">

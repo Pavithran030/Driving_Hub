@@ -27,7 +27,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.whatsapp': 'WhatsApp',
 
     // Hero
-    'hero.title': 'Beginner Driving Classes, Licence & RC Renewal in Omalur',
+    'hero.title': 'Murugan Driving Institute – Trusted Driving Classes in Omalur',
     'hero.subtitle': 'We train complete beginners with confidence, help you clear RTO tests, and handle licence and RC renewal paperwork for you.',
     'hero.callWhatsapp': 'Call / WhatsApp Now',
     'hero.bookDemo': 'Book a Demo Class',
@@ -74,7 +74,7 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.address': 'Address',
     'footer.phone': 'Phone',
     'footer.email': 'Email',
-    'footer.servingAreas': 'Serving Salem and nearby areas',
+    'footer.servingAreas': 'Serving Omalur and nearby areas',
     'footer.rights': 'All rights reserved',
 
     // About Page
@@ -152,8 +152,8 @@ const translations: Record<Language, Record<string, string>> = {
   ta: {
     // Brand
     'brand.name': 'முருகன் டிரைவிங்',
-    'brand.institute': 'நிறுவனம்',
-    'brand.full': 'முருகன் டிரைவிங் நிறுவனம்',
+    'brand.institute': 'இன்ஸ்டிடியூட்',
+    'brand.full': 'முருகன் டிரைவிங் இன்ஸ்டிடியூட்',
 
     // Navigation
     'nav.home': 'முகப்பு',
@@ -167,7 +167,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.whatsapp': 'வாட்ஸ்அப்',
 
     // Hero
-    'hero.title': 'சேலத்தில் ஆரம்ப வாகன பயிற்சி, உரிமம் & RC புதுப்பித்தல்',
+    'hero.title': 'முருகன் டிரைவிங் இன்ஸ்டிடியூட் – ஓமலூரில் நம்பகமான வாகன ஓட்டுனர் பயிற்சி வகுப்புகள்',
     'hero.subtitle': 'புதியவர்களுக்கு தன்னம்பிக்கையுடன் வாகனம் ஓட்ட கற்றுக்கொடுக்கிறோம், RTO தேர்வில் வெற்றி பெற உதவுகிறோம், உரிமம் மற்றும் RC புதுப்பித்தல் ஆவணங்களை கையாளுகிறோம்.',
     'hero.callWhatsapp': 'அழைக்க / வாட்ஸ்அப் செய்ய',
     'hero.bookDemo': 'டெமோ வகுப்பு பதிவு செய்ய',
@@ -216,13 +216,13 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.address': 'முகவரி',
     'footer.phone': 'தொலைபேசி',
     'footer.email': 'மின்னஞ்சல்',
-    'footer.servingAreas': 'சேலம் மற்றும் அருகிலுள்ள பகுதிகளுக்கு சேவை',
+    'footer.servingAreas': 'ஓமலூர் மற்றும் அருகிலுள்ள பகுதிகளுக்கு சேவை',
     'footer.rights': 'அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை',
 
     // About Page
-    'about.title': 'எங்கள் நிறுவனத்தைப் பற்றி',
+    'about.title': 'எங்கள் இன்ஸ்டிடியூட்டைப் பற்றி',
     'about.story.title': 'எங்கள் கதை',
-    'about.story.content': '2008 இல் நிறுவப்பட்ட சேலம் டிரைவிங் இன்ஸ்டிடியூட் 15 ஆண்டுகளுக்கும் மேலாக வாகன பயிற்சியில் நம்பகமான பெயர். சாலை பாதுகாப்பிற்கு பங்களிக்கும் தன்னம்பிக்கையான, பாதுகாப்பான ஓட்டுநர்களை உருவாக்குவதே எங்கள் எளிய இலக்கு.',
+    'about.story.content': '2008 இல் நிறுவப்பட்ட முருகன் டிரைவிங் இன்ஸ்டிடியூட் 15 ஆண்டுகளுக்கும் மேலாக வாகன பயிற்சியில் நம்பகமான பெயர். சாலை பாதுகாப்பிற்கு பங்களிக்கும் தன்னம்பிக்கையான, பாதுகாப்பான ஓட்டுநர்களை உருவாக்குவதே எங்கள் எளிய இலக்கு.',
     'about.mission.title': 'எங்கள் நோக்கம்',
     'about.mission.content': 'தன்னம்பிக்கையை வளர்க்கும், பாதுகாப்பை வலியுறுத்தும், ஒவ்வொரு மாணவரையும் பொறுப்பான வாகன ஓட்டத்திற்கு தயார்படுத்தும் முழுமையான வாகன பயிற்சியை வழங்குவது.',
     'about.instructors.title': 'எங்கள் பயிற்சியாளர்கள்',
@@ -281,7 +281,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Alumni
     'alumni.title': 'எங்கள் முன்னாள் மாணவர் வலையமைப்பு',
-    'alumni.subtitle': 'எங்கள் நிறுவனத்தில் பயிற்சி பெற்ற ஆயிரக்கணக்கான வெற்றிகரமான ஓட்டுநர்களுடன் சேருங்கள்',
+    'alumni.subtitle': 'எங்கள் இன்ஸ்டிடியூட்டில் பயிற்சி பெற்ற ஆயிரக்கணக்கான வெற்றிகரமான ஓட்டுநர்களுடன் சேருங்கள்',
     'alumni.stats.total': 'மொத்த பட்டதாரிகள்',
     'alumni.stats.thisYear': 'இந்த ஆண்டு',
     'alumni.join': 'எங்கள் முன்னாள் மாணவர் வலையமைப்பில் சேரவும்',

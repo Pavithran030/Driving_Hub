@@ -1,5 +1,6 @@
 import { Copy, CheckCircle, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { SEO } from '@/components/SEO';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -132,7 +133,7 @@ const Services = () => {
       title: t('courses.beginner.title'),
       forWhom: t('courses.beginner.for'),
       duration: t('courses.beginner.duration'),
-      learns: language === 'ta' 
+      learns: language === 'ta'
         ? ['அடிப்படை கட்டுப்பாடுகள் & கிளட்ச்/கியர்', 'U-டர்ன், பார்க்கிங், ரிவர்ஸிங்', 'சிக்னல்கள் & லேன் ஒழுக்கம்', 'நகர போக்குவரத்து & அடிப்படை நெடுஞ்சாலை']
         : ['Basic controls & clutch/gear handling', 'U-turns, parking, reversing', 'Traffic signals & lane discipline', 'City traffic & basic highway rules'],
     },
@@ -232,6 +233,13 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={language === 'ta' ? "சேவைகள் | கார் பயிற்சி & உரிமம் | முருகன் டிரைவிங்" : "Services | Driving Courses & Licence | Murugan Driving Institute"}
+        description={language === 'ta'
+          ? "கார் ஓட்டுநர் பயிற்சி, இரு சக்கர வாகன பயிற்சி, ஓட்டுநர் உரிமம், RC புதுப்பித்தல் மற்றும் போக்குவரத்து சேவைகள்."
+          : "We offer beginner to advanced driving courses, RTO licence services (Learner/Permanent), RC renewal, and heavy vehicle training in Salem."}
+        url="/services"
+      />
       <Header />
 
       {/* Page Hero */}
@@ -275,7 +283,7 @@ const Services = () => {
                 <h3 className="text-xl font-bold text-foreground mb-2">{course.title}</h3>
                 <p className="text-muted-foreground text-sm mb-2">{course.forWhom}</p>
                 <p className="text-secondary font-medium text-sm mb-4">{course.duration}</p>
-                
+
                 <h4 className="font-semibold text-foreground mb-3">{t('courses.learn')}</h4>
                 <ul className="space-y-2 mb-6">
                   {course.learns.map((item, i) => (
@@ -285,7 +293,7 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
-                
+
                 <Button className="w-full" asChild>
                   <a href="/contact#enquiry-form">{t('courses.enquire')}</a>
                 </Button>
@@ -310,7 +318,7 @@ const Services = () => {
                   </div>
                   <h3 className="font-bold text-foreground">{service.title}</h3>
                 </div>
-                
+
                 <div className="mb-4">
                   <h4 className="text-sm font-semibold text-foreground mb-2">{t('licence.docs')}</h4>
                   <ul className="space-y-1">
@@ -322,7 +330,7 @@ const Services = () => {
                     ))}
                   </ul>
                 </div>
-                
+
                 <div>
                   <h4 className="text-sm font-semibold text-foreground mb-2">{t('licence.process')}</h4>
                   <ol className="space-y-1">
@@ -355,7 +363,7 @@ const Services = () => {
                   </div>
                   <h3 className="font-bold text-foreground">{service.title}</h3>
                 </div>
-                
+
                 <div>
                   <h4 className="text-sm font-semibold text-foreground mb-2">{t('licence.docs')}</h4>
                   <ul className="space-y-1">
@@ -370,11 +378,11 @@ const Services = () => {
               </div>
             ))}
           </div>
-          
+
           <div className="mt-8 p-6 bg-muted rounded-2xl text-center">
             <AlertCircle className="w-8 h-8 text-accent mx-auto mb-3" />
             <p className="text-muted-foreground">
-              {language === 'ta' 
+              {language === 'ta'
                 ? 'RC வேலைக்கு ஆதரவு தேவையா? எங்களை தொடர்பு கொள்ளுங்கள்!'
                 : 'Need support with RC work? Contact us!'}
             </p>
@@ -409,7 +417,7 @@ const Services = () => {
                     {language === 'ta' ? 'போக்குவரத்து விதிகள் & சிக்னல்கள்' : 'Traffic Rules & Signs'}
                   </h3>
                   <p className="text-sm text-muted-foreground mb-3">
-                    {language === 'ta' 
+                    {language === 'ta'
                       ? 'இந்திய சாலை விதிகள், போக்குவரத்து சிக்னல்கள் மற்றும் பாதுகாப்பு வழிகாட்டுதல்கள்'
                       : 'Indian road rules, traffic signals, and safety guidelines'}
                   </p>

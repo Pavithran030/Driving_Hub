@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Phone, Send, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { SEO } from '@/components/SEO';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -105,7 +106,7 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.name || !formData.phone) {
       toast({
         description: language === 'ta' ? '⚠️ பெயர் மற்றும் தொலைபேசி எண் தேவை' : '⚠️ Name and phone number required',
@@ -113,13 +114,13 @@ const Contact = () => {
       });
       return;
     }
-    
+
     setIsSubmitting(true);
-    
+
     try {
       // Replace with your Google Apps Script Web App URL
       const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwv05po1mERN4v6va4xu8gQ4azsGuhLaEgpRDoCBM4CGAmlokuquMunvlLOkmj74Lvi/exec';
-      
+
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
@@ -128,7 +129,7 @@ const Contact = () => {
         },
         body: JSON.stringify(formData),
       });
-      
+
       // Note: no-cors mode doesn't allow reading response, but submission works
       setIsSubmitted(true);
       setFormData({
@@ -139,11 +140,11 @@ const Contact = () => {
         time: '',
         message: '',
       });
-      
+
       toast({
         description: language === 'ta' ? '✅ உங்கள் விசாரணை வெற்றிகரமாக சமர்ப்பிக்கப்பட்டது!' : '✅ Your enquiry has been submitted successfully!',
       });
-      
+
     } catch (error) {
       toast({
         description: language === 'ta' ? '❌ சமர்ப்பிப்பில் தவறு. மீண்டும் முயற்சிக்கவும்' : '❌ Submission failed. Please try again.',
@@ -168,6 +169,13 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={language === 'ta' ? "தொடர்புக்கு | முருகன் டிரைவிங் இன்ஸ்டிடியூட் சேலம்" : "Contact Us | Murugan Driving Institute Salem"}
+        description={language === 'ta'
+          ? "சேலம் முருகன் டிரைவிங் இன்ஸ்டிடியூட் தொடர்பு விவரங்கள். முகவரி, தொலைபேசி எண் மற்றும் வாட்ஸ்அப் மூலம் தொடர்பு கொள்ளவும்."
+          : "Get in touch with Murugan Driving Institute in Salem. Contact us for driving classes enquiry, licence services, or visit our office."}
+        url="/contact"
+      />
       <Header />
 
       {/* Page Hero */}
@@ -191,7 +199,7 @@ const Contact = () => {
               <h2 className="text-2xl font-bold text-foreground mb-6">
                 {language === 'ta' ? 'எங்களை தொடர்பு கொள்ளுங்கள்' : 'Get in Touch'}
               </h2>
-              
+
               <div className="space-y-6">
                 <a href="tel:+919865068850" className="flex items-start gap-4 p-4 bg-card rounded-xl card-elevated border border-border/50 hover:border-primary/30 transition-colors">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
@@ -252,7 +260,7 @@ const Contact = () => {
               <div className="mt-8">
                 <h3 className="font-semibold text-foreground mb-4">{t('contact.location')}</h3>
                 <div className="rounded-2xl overflow-hidden border border-border/50 shadow-lg">
-                  <iframe 
+                  <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3713.0734262489264!2d78.03881097779417!3d11.739901858753491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf9915423bf39%3A0x49d79817ec0bc856!2sMurugan%20Driving%20Institute%20Omalur!5e1!3m2!1sen!2sin!4v1766569620975!5m2!1sen!2sin"
                     width="100%"
                     height="350"
@@ -382,8 +390,8 @@ const Contact = () => {
 
                     <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                       <Send className="w-5 h-5" />
-                      {isSubmitting 
-                        ? (language === 'ta' ? 'சமர்ப்பிக்கிறது...' : 'Submitting...') 
+                      {isSubmitting
+                        ? (language === 'ta' ? 'சமர்ப்பிக்கிறது...' : 'Submitting...')
                         : t('contact.form.submit')}
                     </Button>
                   </form>

@@ -1,11 +1,13 @@
-import { useState } from 'react';
-import { AlertTriangle, Shield, BookOpen, Video, Image, CheckCircle } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { AlertTriangle, Shield, BookOpen, Video, Image, CheckCircle, Play, Maximize } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CTASection from '@/components/CTASection';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { trafficSignsData } from '@/data/trafficSignsData';
+import rulesVideo from '@/assets/rules.mp4';
+import safetyVideo from '@/assets/safety.mp4';
 
 const TrafficRules = () => {
   const { language } = useLanguage();
@@ -105,24 +107,38 @@ const TrafficRules = () => {
     },
   ];
 
-  // Educational Videos (YouTube embeds)
+  // Educational Videos (Local video files + YouTube)
   const educationalVideos = [
     {
       title: language === 'ta' ? 'இந்திய போக்குவரத்து விதிகள்' : 'Indian Traffic Rules',
-      url: 'https://www.youtube.com/embed/VJY-M0kYMVs',
+      videoSrc: rulesVideo,
+      type: 'local',
       description: language === 'ta' ? 'போக்குவரத்து விதிகளின் முழுமையான விளக்கம்' : 'Complete explanation of traffic rules'
     },
     {
       title: language === 'ta' ? 'பாதுகாப்பான ஓட்டுநர் பயிற்சி' : 'Safe Driving Tips',
-      url: 'https://www.youtube.com/embed/F3Hc9yXy8I4',
+      videoSrc: safetyVideo,
+      type: 'local',
       description: language === 'ta' ? 'பாதுகாப்பாக வாகனம் ஓட்டுவது எப்படி' : 'How to drive safely'
     },
     {
       title: language === 'ta' ? 'RTO தேர்வு தயாரிப்பு' : 'RTO Test Preparation',
       url: 'https://www.youtube.com/embed/xsD8v0qhHjg',
+      type: 'youtube',
       description: language === 'ta' ? 'RTO தேர்வுக்கு எப்படி தயாராவது' : 'How to prepare for RTO test'
     },
   ];
+
+  // Function to handle fullscreen on video click
+  const handleVideoClick = (videoElement: HTMLVideoElement) => {
+    if (videoElement.requestFullscreen) {
+      videoElement.requestFullscreen();
+    } else if ((videoElement as any).webkitRequestFullscreen) {
+      (videoElement as any).webkitRequestFullscreen();
+    } else if ((videoElement as any).msRequestFullscreen) {
+      (videoElement as any).msRequestFullscreen();
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -357,22 +373,84 @@ const TrafficRules = () => {
             <TabsContent value="videos" className="space-y-6">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {educationalVideos.map((video, idx) => (
-                  <div key={idx} className="bg-card rounded-2xl overflow-hidden card-elevated border border-border/50">
-                    <div className="aspect-video">
-                      <iframe
-                        src={video.url}
-                        className="w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        title={video.title}
-                      />
+                  <div key={idx} className="bg-card rounded-2xl overflow-hidden card-elevated border border-border/50 group">
+                    <div className="aspect-video relative bg-black">
+                      {video.type === 'local' ? (
+                        <>
+                          <video
+                            className="w-full h-full object-contain cursor-pointer"
+                            controls
+                            controlsList="nodownload"
+                            preload="metadata"
+                            onClick={(e) => handleVideoClick(e.currentTarget)}
+                          >
+                            <source src={video.videoSrc} type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
+                          <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                            <div className="bg-primary/90 rounded-full p-4">
+                              <Maximize className="w-8 h-8 text-white" />
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        <iframe
+                          src={video.url}
+                          className="w-full h-full"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          title={video.title}
+                        />
+                      )}
                     </div>
                     <div className="p-4">
-                      <h3 className="font-bold text-foreground mb-2">{video.title}</h3>
+                      <h3 className="font-bold text-foreground mb-2 flex items-center gap-2">
+                        <Play className="w-5 h-5 text-primary" />
+                        {video.title}
+                      </h3>
                       <p className="text-sm text-muted-foreground">{video.description}</p>
+                      {video.type === 'local' && (
+                        <p className="text-xs text-muted-foreground mt-2 italic">
+                          {language === 'ta' ? '💡 முழு திரையில் பார்க்க வீடியோவை கிளிக் செய்யவும்' : '💡 Click video to play in fullscreen'}
+                        </p>
+                      )}
                     </div>
                   </div>
                 ))}
+              </div>
+
+              {/* Video Tips */}
+              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-3xl p-6 md:p-8 border border-purple-500/20">
+                <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
+                  <Video className="w-7 h-7 text-purple-500" />
+                  {language === 'ta' ? 'வீடியோ குறிப்புகள்' : 'Video Tips'}
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">
+                      {language === 'ta' 
+                        ? 'வீடியோக்களை முழுமையாக பார்த்து அனைத்து விதிகளையும் தெரிந்து கொள்ளுங்கள்' 
+                        : 'Watch videos completely to understand all traffic rules'}
+                    </span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">
+                      {language === 'ta' 
+                        ? 'முழு திரை பார்வைக்கு வீடியோவை கிளிக் செய்யவும்' 
+                        : 'Click on the video to enter fullscreen mode for better viewing'}
+                    </span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">
+                      {language === 'ta' 
+                        ? 'வீடியோவில் உள்ள பாதுகாப்பு குறிப்புகளை பின்பற்றுங்கள்' 
+                        : 'Follow the safety tips shown in the videos'}
+                    </span>
+                  </div>
+                </div>
               </div>
 
               {/* Additional Resources */}
