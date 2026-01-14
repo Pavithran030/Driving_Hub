@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 // Load env vars roughly (since we can't easily use dotenv in simple script without dependency, we'll parse .env manually if needed or just trust the build env)
 // For simplicity in this project context, we'll try to read .env
-let siteUrl = 'https://murugan-driving-4fc92.web.app'; // Fallback
+let siteUrl = 'https://murugandrivinginstitute.in'; // Fallback
 
 try {
     const envPath = path.resolve(__dirname, '../.env');

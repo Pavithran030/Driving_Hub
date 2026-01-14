@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://murugan-driving-4fc92.web.app/sitemap.xml
+Sitemap: https://murugandrivinginstitute.in/sitemap.xml

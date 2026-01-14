@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "murugan-driving-4fc92"
-  }
+    "default": "murugan-driving-institute",
+    "Murugan Driving Institute": "murugan-driving-institute"
+  },
+  "targets": {},
+  "etags": {}
 }
