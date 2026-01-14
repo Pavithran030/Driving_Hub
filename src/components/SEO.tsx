@@ -6,9 +6,10 @@ interface SEOProps {
   keywords?: string;
   image?: string;
   url?: string;
+  schema?: string;
 }
 
-export const SEO = ({ title, description, keywords, image, url }: SEOProps) => {
+export const SEO = ({ title, description, keywords, image, url, schema }: SEOProps) => {
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://murugan-driving-4fc92.web.app';
   const canonicalUrl = url ? `${siteUrl}${url}` : siteUrl;
   const imageUrl = image ? (image.startsWith('http') ? image : `${siteUrl}${image}`) : `${siteUrl}/og-image.jpg`;
@@ -34,6 +35,13 @@ export const SEO = ({ title, description, keywords, image, url }: SEOProps) => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
+
+      {/* Structured Data (JSON-LD) */}
+      {schema && (
+        <script type="application/ld+json">
+          {schema}
+        </script>
+      )}
     </Helmet>
   );
 };

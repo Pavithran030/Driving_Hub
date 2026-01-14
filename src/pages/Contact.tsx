@@ -119,7 +119,7 @@ const Contact = () => {
 
     try {
       // Replace with your Google Apps Script Web App URL
-      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwv05po1mERN4v6va4xu8gQ4azsGuhLaEgpRDoCBM4CGAmlokuquMunvlLOkmj74Lvi/exec';
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzHkPR_jF10ZBbG-N9QkpW_PoQK6hS2DdmlOqjqhDRpVBimotlCc7exdXpGttvBMDx2CA/exec';
 
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',

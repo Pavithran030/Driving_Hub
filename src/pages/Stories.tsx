@@ -7,6 +7,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CTASection from '@/components/CTASection';
 
+import { SEO } from '@/components/SEO';
+
 const Stories = () => {
   const { t, language } = useLanguage();
 
@@ -24,7 +26,7 @@ const Stories = () => {
       name: language === 'ta' ? 'கவிதா செல்வராஜ்' : 'Kavitha Selvaraj',
       location: language === 'ta' ? 'அத்திப்பட்டி, சேலம்' : 'Atthipatty, Salem',
       course: language === 'ta' ? 'ஆரம்ப கார் பயிற்சி' : 'Beginner Car Course',
-      quote: language === 'ta' 
+      quote: language === 'ta'
         ? 'நான் 35 வயதில் வாகனம் ஓட்ட கற்றுக்கொண்டேன். மிகவும் பயமாக இருந்தது, ஆனால் பிரேமா மேடம் மிகவும் பொறுமையாக கற்றுக்கொடுத்தார். இப்போது தன்னம்பிக்கையுடன் வாகனம் ஓட்டுகிறேன். என் குடும்பத்தினர் மிகவும் பெருமைப்படுகிறார்கள்!'
         : 'I learned to drive at 35. Was very nervous, but Prema mam was so patient. Now I drive confidently every day. My family is so proud of me!',
     },
@@ -72,6 +74,13 @@ const Stories = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={language === 'ta' ? "மாணவர் அனுபவங்கள் | முருகன் டிரைவிங்" : "Student Stories | Murugan Driving Institute Salem"}
+        description={language === 'ta'
+          ? "எங்கள் மாணவர்களின் வெற்றி கதைகள் மற்றும் அனுபவங்களை படியுங்கள். 10,000+ மகிழ்ச்சியான மாணவர்கள்."
+          : "Read inspiring stories from our students. See how we helped nervous beginners become confident drivers."}
+        url="/stories"
+      />
       <Header />
 
       {/* Page Hero */}
@@ -96,8 +105,8 @@ const Stories = () => {
             {galleryImages.map((image, index) => (
               <div key={index} className="aspect-square bg-muted rounded-2xl overflow-hidden relative group">
                 {image.image ? (
-                  <img 
-                    src={image.image} 
+                  <img
+                    src={image.image}
                     alt={image.alt}
                     className="w-full h-full object-cover"
                   />
@@ -151,7 +160,7 @@ const Stories = () => {
               {t('stories.share')}
             </h3>
             <p className="text-muted-foreground mb-6">
-              {language === 'ta' 
+              {language === 'ta'
                 ? 'எங்கள் நிறுவனத்தில் படித்தீர்களா? உங்கள் அனுபவத்தை பகிருங்கள்!'
                 : 'Did you learn with us? Share your experience!'}
             </p>

@@ -4,6 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CTASection from '@/components/CTASection';
+import { SEO } from '@/components/SEO';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { trafficSignsData } from '@/data/trafficSignsData';
 import rulesVideo from '@/assets/rules.mp4';
@@ -142,6 +143,13 @@ const TrafficRules = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={language === 'ta' ? "போக்குவரத்து விதிகள் | அறிகுறிகள் & பாதுகாப்பு | முருகன் டிரைவிங்" : "Traffic Rules | Signs & Safety | Murugan Driving Institute"}
+        description={language === 'ta'
+          ? "இந்திய போக்குவரத்து விதிகள், சாலை அறிகுறிகள் மற்றும் பாதுகாப்பு குறிப்புகள். பாதுகாப்பான பயணத்திற்கான முழுமையான வழிகாட்டி."
+          : "Complete guide to Indian traffic rules, road signs, and safety tips. Learn mandatory, cautionary and information signs."}
+        url="/traffic-rules"
+      />
       <Header />
 
       {/* Hero Section */}
@@ -156,7 +164,7 @@ const TrafficRules = () => {
             {language === 'ta' ? 'போக்குவரத்து விதிகள் & பாதுகாப்பு' : 'Traffic Rules & Safety'}
           </h1>
           <p className="text-white/90 text-lg max-w-2xl mx-auto">
-            {language === 'ta' 
+            {language === 'ta'
               ? 'இந்திய சாலை விதிகள், போக்குவரத்து சிக்னல்கள் மற்றும் பாதுகாப்பு வழிகாட்டுதல்கள்'
               : 'Indian road rules, traffic signals, and safety guidelines'}
           </p>
@@ -188,15 +196,13 @@ const TrafficRules = () => {
               <div className="space-y-8">
                 {trafficSignsData.map((category, categoryIdx) => (
                   <div key={categoryIdx} className="space-y-6">
-                    <div className={`bg-gradient-to-r ${
-                      categoryIdx === 0 ? 'from-red-500/10 to-blue-500/10' :
+                    <div className={`bg-gradient-to-r ${categoryIdx === 0 ? 'from-red-500/10 to-blue-500/10' :
                       categoryIdx === 1 ? 'from-yellow-500/10 to-orange-500/10' :
-                      'from-blue-500/10 to-green-500/10'
-                    } rounded-2xl p-6 border ${
-                      categoryIdx === 0 ? 'border-red-500/20' :
-                      categoryIdx === 1 ? 'border-yellow-500/20' :
-                      'border-blue-500/20'
-                    }`}>
+                        'from-blue-500/10 to-green-500/10'
+                      } rounded-2xl p-6 border ${categoryIdx === 0 ? 'border-red-500/20' :
+                        categoryIdx === 1 ? 'border-yellow-500/20' :
+                          'border-blue-500/20'
+                      }`}>
                       <h3 className="text-2xl font-bold text-foreground mb-2">
                         {language === 'ta' ? category.categoryTa : category.category}
                       </h3>
@@ -207,21 +213,20 @@ const TrafficRules = () => {
 
                     <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                       {category.signs.map((sign, signIdx) => (
-                        <div 
+                        <div
                           key={signIdx}
-                          className={`bg-card rounded-xl p-5 card-elevated border-2 hover:scale-105 transition-all text-center ${
-                            sign.color === 'red' ? 'border-red-500/30 hover:border-red-500' :
+                          className={`bg-card rounded-xl p-5 card-elevated border-2 hover:scale-105 transition-all text-center ${sign.color === 'red' ? 'border-red-500/30 hover:border-red-500' :
                             sign.color === 'blue' ? 'border-blue-500/30 hover:border-blue-500' :
-                            sign.color === 'yellow' ? 'border-yellow-500/30 hover:border-yellow-500' :
-                            sign.color === 'green' ? 'border-green-500/30 hover:border-green-500' :
-                            'border-border/50 hover:border-primary/50'
-                          }`}
+                              sign.color === 'yellow' ? 'border-yellow-500/30 hover:border-yellow-500' :
+                                sign.color === 'green' ? 'border-green-500/30 hover:border-green-500' :
+                                  'border-border/50 hover:border-primary/50'
+                            }`}
                         >
                           {sign.image ? (
                             <div className="w-24 h-24 mx-auto mb-3 flex items-center justify-center">
-                              <img 
-                                src={sign.image} 
-                                alt={sign.name} 
+                              <img
+                                src={sign.image}
+                                alt={sign.name}
                                 className="w-full h-full object-contain"
                               />
                             </div>
@@ -240,7 +245,7 @@ const TrafficRules = () => {
                   </div>
                 ))}
               </div>
-              
+
               {/* Traffic Signal Lights */}
               <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl p-6 md:p-8 border border-border/50">
                 <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
@@ -429,24 +434,24 @@ const TrafficRules = () => {
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
                     <span className="text-muted-foreground">
-                      {language === 'ta' 
-                        ? 'வீடியோக்களை முழுமையாக பார்த்து அனைத்து விதிகளையும் தெரிந்து கொள்ளுங்கள்' 
+                      {language === 'ta'
+                        ? 'வீடியோக்களை முழுமையாக பார்த்து அனைத்து விதிகளையும் தெரிந்து கொள்ளுங்கள்'
                         : 'Watch videos completely to understand all traffic rules'}
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
                     <span className="text-muted-foreground">
-                      {language === 'ta' 
-                        ? 'முழு திரை பார்வைக்கு வீடியோவை கிளிக் செய்யவும்' 
+                      {language === 'ta'
+                        ? 'முழு திரை பார்வைக்கு வீடியோவை கிளிக் செய்யவும்'
                         : 'Click on the video to enter fullscreen mode for better viewing'}
                     </span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
                     <span className="text-muted-foreground">
-                      {language === 'ta' 
-                        ? 'வீடியோவில் உள்ள பாதுகாப்பு குறிப்புகளை பின்பற்றுங்கள்' 
+                      {language === 'ta'
+                        ? 'வீடியோவில் உள்ள பாதுகாப்பு குறிப்புகளை பின்பற்றுங்கள்'
                         : 'Follow the safety tips shown in the videos'}
                     </span>
                   </div>
@@ -460,7 +465,7 @@ const TrafficRules = () => {
                   {language === 'ta' ? 'கூடுதல் வளங்கள்' : 'Additional Resources'}
                 </h3>
                 <div className="space-y-3">
-                  <a 
+                  <a
                     href="https://parivahan.gov.in/parivahan/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -476,7 +481,7 @@ const TrafficRules = () => {
                       </p>
                     </div>
                   </a>
-                  <a 
+                  <a
                     href="https://morth.nic.in/"
                     target="_blank"
                     rel="noopener noreferrer"

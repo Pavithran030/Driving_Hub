@@ -148,6 +148,42 @@ const Index = () => {
     },
   ];
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Murugan Driving Institute",
+    "image": "https://www.murugandrivinginstitute.in/logo.png",
+    "telephone": "+919865068850",
+    "url": "https://www.murugandrivinginstitute.in",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Mettur Main Road",
+      "addressLocality": "Omalur",
+      "addressRegion": "Tamil Nadu",
+      "postalCode": "636455",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 11.7399,
+      "longitude": 78.0388
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "06:00",
+      "closes": "20:00"
+    },
+    "priceRange": "₹"
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <SEO
@@ -157,6 +193,7 @@ const Index = () => {
           : "Learn to drive with confidence at Murugan Driving Institute. Best car driving classes in Salem, Tamil Nadu. RTO licence and RC services available."}
         keywords="driving school salem, car driving classes salem, ladies driving school salem, driving licence agent salem, rto services salem"
         url="/"
+        schema={JSON.stringify(schemaData)}
       />
       <Header />
 
