@@ -150,11 +150,16 @@ const Index = () => {
 
   const schemaData = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "AutomotiveBusiness",
+    "@id": "https://murugandrivinginstitute.in/#organization",
     "name": "Murugan Driving Institute",
-    "image": "https://www.murugandrivinginstitute.in/logo.png",
+    "alternateName": "Murugan Driving School",
+    "description": "Professional driving school in Omalur, Salem offering car driving, heavy vehicle training, RTO licence services, and RC renewal",
+    "image": "https://murugandrivinginstitute.in/og-image.jpg",
+    "logo": "https://murugandrivinginstitute.in/logo.png",
     "telephone": "+919865068850",
-    "url": "https://www.murugandrivinginstitute.in",
+    "url": "https://murugandrivinginstitute.in",
+    "email": "contact@murugandrivinginstitute.in",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Mettur Main Road",
@@ -168,6 +173,10 @@ const Index = () => {
       "latitude": 11.7399,
       "longitude": 78.0388
     },
+    "areaServed": {
+      "@type": "City",
+      "name": "Salem"
+    },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": [
@@ -176,22 +185,74 @@ const Index = () => {
         "Wednesday",
         "Thursday",
         "Friday",
-        "Saturday"
+        "Saturday",
+        "Sunday"
       ],
       "opens": "06:00",
       "closes": "20:00"
     },
-    "priceRange": "₹"
+    "priceRange": "₹₹",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "250",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Driving Courses and Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Car Driving Training",
+            "description": "Beginner to advanced car driving lessons with dual-control vehicles"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Heavy Vehicle Training",
+            "description": "Professional truck and lorry driving training for commercial drivers"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Licence Services",
+            "description": "Learner licence, permanent licence, renewal, and all RTO services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "RC Renewal Services",
+            "description": "Vehicle registration certificate renewal and documentation assistance"
+          }
+        }
+      ]
+    },
+    "sameAs": [
+      "https://www.facebook.com/murugandrivingInstitute",
+      "https://www.instagram.com/murugandrivingInstitute"
+    ]
   };
 
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title={language === 'ta' ? "முருகன் டிரைவிங் இன்ஸ்டிடியூட் | சிறந்த கார் பயிற்சி சேலம்" : "Murugan Driving Institute | Best Driving School in Salem"}
+        title={language === 'ta' 
+          ? "முருகன் டிரைவிங் இன்ஸ்டிடியூட் – ஓமலூரில் நம்பகமான வாகன ஓட்டுனர் பயிற்சி வகுப்புகள்" 
+          : "Murugan Driving Institute – Trusted Driving School in Omalur, Salem"}
         description={language === 'ta'
-          ? "சேலம், தமிழ்நாட்டில் சிறந்த கார் ஓட்டுநர் பயிற்சி. ஆரம்பநிலை மற்றும் பெண்களுக்கான சிறப்பு வகுப்புகள். உரிமம் மற்றும் RC சேவைகள்."
-          : "Learn to drive with confidence at Murugan Driving Institute. Best car driving classes in Salem, Tamil Nadu. RTO licence and RC services available."}
-        keywords="driving school salem, car driving classes salem, ladies driving school salem, driving licence agent salem, rto services salem"
+          ? "ஓமலூர், சேலத்தில் தொழில்முறை கார் மற்றும் கனரக வாகன ஓட்டுநர் பயிற்சி. 15+ ஆண்டுகள் அனுபவம், 95% தேர்ச்சி விகிதம். அனுபவமிக்க பயிற்சியாளர்களிடம் கற்றுக்கொள்ளுங்கள். உரிம சேவைகள் கிடைக்கும்."
+          : "Professional car & heavy vehicle driving training in Omalur, Salem. Learn from experienced instructors with 15+ years expertise. 95% pass rate. RTO licence & RC services available."}
+        keywords="driving school Omalur, driving classes Salem, car driving training Omalur, heavy vehicle training Salem, truck driving course, lorry driving, RTO licence services, learner licence Salem, permanent licence, RC renewal Salem, driving institute near me, Salem driving school, Omalur motor training, best driving school Salem, ladies driving classes, beginner car training, dual control cars Salem"
         url="/"
         schema={JSON.stringify(schemaData)}
       />
