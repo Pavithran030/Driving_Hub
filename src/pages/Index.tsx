@@ -248,7 +248,7 @@ const Index = () => {
       <SEO
         title={language === 'ta' 
           ? "முருகன் டிரைவிங் இன்ஸ்டிடியூட் – ஓமலூரில் நம்பகமான வாகன ஓட்டுனர் பயிற்சி வகுப்புகள்" 
-          : "Murugan Driving Institute – Trusted Driving School in Omalur, Salem"}
+          : "Murugan Driving Institute – Trusted Driving Institute in Omalur, Salem"}
         description={language === 'ta'
           ? "ஓமலூர், சேலத்தில் தொழில்முறை கார் மற்றும் கனரக வாகன ஓட்டுநர் பயிற்சி. 15+ ஆண்டுகள் அனுபவம், 95% தேர்ச்சி விகிதம். அனுபவமிக்க பயிற்சியாளர்களிடம் கற்றுக்கொள்ளுங்கள். உரிம சேவைகள் கிடைக்கும்."
           : "Professional car & heavy vehicle driving training in Omalur, Salem. Learn from experienced instructors with 15+ years expertise. 95% pass rate. RTO licence & RC services available."}

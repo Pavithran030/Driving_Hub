@@ -115,7 +115,7 @@ const About = () => {
       bio: language === 'ta'
         ? 'ராஜேஷ் RTO தேர்வு தயாரிப்பில் நிபுணர். தேர்வில் எதிர்பார்க்கப்படும் அனைத்து நிலைகளையும் முழுமையாக பயிற்சி அளிப்பார். அவரது மாணவர்களின் வெற்றி விகிதம் 95% க்கும் அதிகம்.'
         : 'Rajesh specializes in RTO test preparation. He thoroughly trains students on all aspects expected in the test. His students have a success rate of over 95%.',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
+      image: '',
       qualifications: [
         language === 'ta' ? 'RTO தேர்வு நிபுணர்' : 'RTO Test Expert',
         language === 'ta' ? '95% தேர்வு வெற்றி விகிதம்' : '95% Test Pass Rate',
@@ -131,7 +131,7 @@ const About = () => {
       bio: language === 'ta'
         ? 'பிரேமா பெண் மாணவர்களுக்கு சிறப்பு பயிற்சி அளிக்கிறார். அவர்களுக்கு வசதியான மற்றும் பாதுகாப்பான சூழலில் கற்பிக்கிறார். பெண்கள் தனியாக ஓட்டுவதில் நம்பிக்கை கொள்ள உதவுகிறார்.'
         : 'Prema provides specialized training for women learners. She teaches in a comfortable and safe environment. Helps women gain confidence to drive independently.',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face',
+      image: '',
       qualifications: [
         language === 'ta' ? 'பெண் பயிற்சி நிபுணர்' : 'Women Training Specialist',
         language === 'ta' ? 'பாதுகாப்பு சான்றிதழ்' : 'Safety Certified',
@@ -147,7 +147,7 @@ const About = () => {
       bio: language === 'ta'
         ? 'குமார் நெடுஞ்சாலை ஓட்டம் மற்றும் நீண்ட தூர பயணத்தில் நிபுணர். வேகமான சாலைகளில் பாதுகாப்பாக ஓட்டுவது, ஓவர்டேக்கிங், இரவு ஓட்டம் ஆகியவற்றில் பயிற்சி அளிக்கிறார்.'
         : 'Kumar specializes in highway driving and long distance travel. He trains on safe driving at high speeds, overtaking, and night driving.',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face',
+      image: '',
       qualifications: [
         language === 'ta' ? 'நெடுஞ்சாலை நிபுணர்' : 'Highway Expert',
         language === 'ta' ? 'நீண்ட தூர பயிற்சி' : 'Long Distance Training',
@@ -170,7 +170,7 @@ const About = () => {
       icon: CarIcon,
       models: language === 'ta'
         ? 'மாருதி சுவிஃப்ட், ஹூண்டாய் i20, டாடா டியாகோ'
-        : 'Maruti Swift, Hyundai i20, Tata Tiago',
+        : 'Maruti Omni',
       features: [
         language === 'ta' ? 'இரட்டை கட்டுப்பாடு அமைப்பு' : 'Dual Control System',
         language === 'ta' ? 'ABS & ஏர்பேக்குகள்' : 'ABS & Airbags',

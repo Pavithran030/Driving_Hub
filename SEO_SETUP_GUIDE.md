@@ -210,7 +210,7 @@ Create an image for social sharing:
 - **Content:**
   - Logo
   - "Murugan Driving Institute"
-  - "Trusted Driving School in Omalur, Salem"
+  - "Trusted Driving Institute in Omalur, Salem"
   - Phone number
   - Eye-catching background
 
