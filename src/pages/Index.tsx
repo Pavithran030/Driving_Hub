@@ -152,8 +152,8 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "AutomotiveBusiness",
     "@id": "https://murugandrivinginstitute.in/#organization",
-    "name": "Murugan Driving Institute",
-    "alternateName": "Murugan Driving School",
+    "name": "Murugan Driving Institute in Omalur,Salem",
+    "alternateName": ["Murugan Driving School", "Murugan driving school in omalur", "Omalur driving school", "Murugan driving institute in omalur", "Murugan Driving Institute"],
     "description": "Professional driving school in Omalur, Salem offering car driving, heavy vehicle training, RTO licence services, and RC renewal",
     "image": "https://murugandrivinginstitute.in/og-image.jpg",
     "logo": "https://murugandrivinginstitute.in/logo.png",
@@ -247,8 +247,8 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title={language === 'ta' 
-          ? "முருகன் டிரைவிங் இன்ஸ்டிடியூட் – ஓமலூரில் நம்பகமான வாகன ஓட்டுனர் பயிற்சி வகுப்புகள்" 
-          : "Murugan Driving Institute – Trusted Driving Institute in Omalur, Salem"}
+          ? "முருகன் டிரைவிங் இன்ஸ்டிடியூட் – ஓமலூரில் " 
+          : "Murugan Driving Institute - Omalur"}
         description={language === 'ta'
           ? "ஓமலூர், சேலத்தில் தொழில்முறை கார் மற்றும் கனரக வாகன ஓட்டுநர் பயிற்சி. 15+ ஆண்டுகள் அனுபவம், 95% தேர்ச்சி விகிதம். அனுபவமிக்க பயிற்சியாளர்களிடம் கற்றுக்கொள்ளுங்கள். உரிம சேவைகள் கிடைக்கும்."
           : "Professional car & heavy vehicle driving training in Omalur, Salem. Learn from experienced instructors with 15+ years expertise. 95% pass rate. RTO licence & RC services available."}

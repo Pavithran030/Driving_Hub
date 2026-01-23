@@ -30,7 +30,7 @@ export const SEO = ({ title, description, keywords, image, url, schema, type = '
       <meta property="og:type" content={type} />
       <meta property="og:locale" content="en_IN" />
       <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:site_name" content="Murugan Driving Institute" />
+      <meta property="og:site_name" content="Murugan Driving Institute in Omalur,Salem" />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={imageUrl} />
@@ -47,7 +47,7 @@ export const SEO = ({ title, description, keywords, image, url, schema, type = '
       <meta name="twitter:image:alt" content={title} />
 
       {/* Additional SEO */}
-      <meta name="author" content="Murugan Driving Institute" />
+      <meta name="author" content="Murugan Driving Institute in Omalur,Salem" />
       <meta name="geo.region" content="IN-TN" />
       <meta name="geo.placename" content="Omalur, Salem" />
       <meta name="geo.position" content="11.7447;78.0430" />

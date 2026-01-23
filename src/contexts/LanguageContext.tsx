@@ -27,8 +27,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.whatsapp': 'WhatsApp',
 
     // Hero
-    'hero.title': 'Murugan Driving Institute – Trusted Driving Classes in Omalur',
-    'hero.subtitle': 'We train complete beginners with confidence, help you clear RTO tests, and handle licence and RC renewal paperwork for you.',
+    'hero.title': 'Murugan Driving Institute in Omalur,Salem',
+    'hero.subtitle': 'Professional car & heavy vehicle driving training with 15+ years expertise. Trusted driving school serving Omalur, Salem, and nearby areas. Complete RTO services available.',
     'hero.callWhatsapp': 'Call / WhatsApp Now',
     'hero.bookDemo': 'Book a Demo Class',
 
@@ -167,8 +167,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.whatsapp': 'வாட்ஸ்அப்',
 
     // Hero
-    'hero.title': 'முருகன் டிரைவிங் இன்ஸ்டிடியூட் – ஓமலூரில் நம்பகமான வாகன ஓட்டுனர் பயிற்சி வகுப்புகள்',
-    'hero.subtitle': 'புதியவர்களுக்கு தன்னம்பிக்கையுடன் வாகனம் ஓட்ட கற்றுக்கொடுக்கிறோம், RTO தேர்வில் வெற்றி பெற உதவுகிறோம், உரிமம் மற்றும் RC புதுப்பித்தல் ஆவணங்களை கையாளுகிறோம்.',
+    'hero.title': 'முருகன் டிரைவிங் இன்ஸ்டிடியூட் ஓமலூர், சேலம்',
+    'hero.subtitle': '15+ ஆண்டுகள் நிபுணத்துவத்துடன் தொழில்முறை கார் மற்றும் கனரக வாகன பயிற்சி. ஓமலூர், சேலம் மற்றும் அருகிலுள்ள பகுதிகளுக்கு நம்பகமான வாகன பள்ளி. முழு RTO சேவைகள் கிடைக்கும்.',
     'hero.callWhatsapp': 'அழைக்க / வாட்ஸ்அப் செய்ய',
     'hero.bookDemo': 'டெமோ வகுப்பு பதிவு செய்ய',
 
