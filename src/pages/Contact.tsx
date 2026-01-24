@@ -249,7 +249,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-foreground">{language === 'ta' ? 'நேரம்' : 'Timings'}</h3>
                     <p className="text-muted-foreground">
-                      {language === 'ta' ? 'திங்கள் - சனி: காலை 6 - இரவு 8' : 'Mon - Sat: 7:00 AM - 5:00 PM'}<br />
+                      {language === 'ta' ? 'திங்கள் - சனி: காலை 6 - இரவு 8' : 'Mon - Sat: 08:00 AM - 05:00 PM'}<br />
                       {/* {language === 'ta' ? 'ஞாயிறு: காலை 7 - மதியம் 12' : 'Sunday: 7:00 AM - 12:00 PM'} */}
                     </p>
                   </div>

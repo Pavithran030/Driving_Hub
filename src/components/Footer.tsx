@@ -113,7 +113,7 @@ const Footer = () => {
                 <Clock className="w-5 h-5 mt-0.5 shrink-0" />
                 <div>
                   <p className="font-medium text-background">Monday - Saturday</p>
-                  <p>07:00 AM - 05:00 PM </p>
+                  <p>08:00 AM - 05:00 PM </p>
                 </div>
               </div>
               {/* <div className="flex items-start gap-3 text-background/80 text-sm">
@@ -131,7 +131,7 @@ const Footer = () => {
                 <Clock className="w-5 h-5 mt-0.5 shrink-0" />
                 <div>
                   <p className="font-medium text-background">Monday - Saturday</p>
-                  <p>09:00 AM - 10:00 PM  <br/> 04:00 PM - 05:00 PM</p>
+                  <p>08:00 AM - 09:00 PM  <br/> 04:00 PM - 05:00 PM</p>
                 </div>
               </div>
               {/* <div className="flex items-start gap-3 text-background/80 text-sm">
