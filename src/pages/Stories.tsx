@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
 import { Camera, Quote, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useState, useEffect } from 'react';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
 import photo12 from '@/assets/photo-12.jpg';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
@@ -9,8 +13,114 @@ import CTASection from '@/components/CTASection';
 
 import { SEO } from '@/components/SEO';
 
+interface Testimonial {
+  name: string;
+  location: string;
+  course: string;
+  quote: string;
+}
+
 const Stories = () => {
   const { t, language } = useLanguage();
+  const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    location: '',
+    course: '',
+    feedback: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+  const [userTestimonials, setUserTestimonials] = useState<Testimonial[]>([]);
+  
+  // Google Sheets Web App URL - REPLACE THIS WITH YOUR URL
+  const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbyDwphXTmpyafGt-5M3RaQcShPJ72zVyd2gsqDzGOEHQ1CvXJReLu5R8tv0XNIsU6pmtw/exec';
+
+  // Load testimonials from Google Sheets on mount
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const response = await fetch(GOOGLE_SHEET_URL);
+        const result = await response.json();
+        if (result.status === 'success' && result.data) {
+          setUserTestimonials(result.data);
+        }
+      } catch (error) {
+        console.error('Failed to load testimonials:', error);
+      }
+    };
+    
+    fetchTestimonials();
+    // Refresh testimonials every 30 seconds
+    const interval = setInterval(fetchTestimonials, 30000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    // Create optimistic testimonial to show immediately
+    const optimisticTestimonial: Testimonial = {
+      name: formData.name,
+      location: formData.location,
+      course: formData.course,
+      quote: formData.feedback,
+    };
+
+    // Add to UI immediately (optimistic update)
+    const updatedTestimonials = [optimisticTestimonial, ...userTestimonials];
+    setUserTestimonials(updatedTestimonials);
+    localStorage.setItem('cachedTestimonials', JSON.stringify(updatedTestimonials));
+
+    try {
+      // Submit to Google Sheets in background
+      await fetch(GOOGLE_SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          location: formData.location,
+          course: formData.course,
+          feedback: formData.feedback,
+        }),
+      });
+
+      // Show success message
+      setSubmitMessage(language === 'ta' 
+        ? 'நன்றி! உங்கள் கருத்து வெற்றிகரமாக சேர்க்கப்பட்டது.'
+        : 'Thank you! Your feedback has been submitted successfully.');
+      
+      // Reset form and scroll after 2 seconds
+      setTimeout(() => {
+        setFormData({ name: '', location: '', course: '', feedback: '' });
+        setIsSubmitting(false);
+        setShowForm(false);
+        setSubmitMessage('');
+        
+        // Scroll to testimonials section
+        const testimonialsSection = document.querySelector('.section-padding.bg-muted\\/30');
+        if (testimonialsSection) {
+          testimonialsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 2000);
+      
+    } catch (error) {
+      setSubmitMessage(language === 'ta' 
+        ? 'மன்னிக்கவும், ஏதோ தவறு நடந்தது. மீண்டும் முயற்சிக்கவும்.'
+        : 'Sorry, something went wrong. Please try again.');
+      setIsSubmitting(false);
+    }
+  };
 
   const galleryImages = [
     { alt: 'Training session', image: photo12 },
@@ -122,15 +232,39 @@ const Stories = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="section-padding bg-muted/50">
+      {/* Testimonials Section */}
+      <section className="section-padding bg-muted/30">
         <div className="container-custom">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center mb-12">
             {t('stories.testimonials')}
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* User-submitted testimonials first */}
+            {userTestimonials.map((testimonial, index) => (
+              <div key={`user-${index}`} className="bg-card rounded-2xl p-6 md:p-8 card-elevated border border-green-200 relative">
+                <div className="absolute top-4 right-4 bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-medium">
+                  {language === 'ta' ? 'புதிய' : 'New'}
+                </div>
+                <Quote className="w-10 h-10 text-primary/20 absolute top-6 left-6" />
+                <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-6 relative z-10 mt-6">
+                  "{testimonial.quote}"
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                    <span className="text-green-700 font-bold text-lg">{testimonial.name.charAt(0)}</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
+                    <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                    <p className="text-xs text-secondary font-medium">{testimonial.course}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+            
+            {/* Default testimonials */}
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-card rounded-2xl p-6 md:p-8 card-elevated border border-border/50 relative">
+              <div key={`default-${index}`} className="bg-card rounded-2xl p-6 md:p-8 card-elevated border border-border/50 relative">
                 <Quote className="w-10 h-10 text-primary/20 absolute top-6 right-6" />
                 <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-6 relative z-10">
                   "{testimonial.quote}"
@@ -154,21 +288,119 @@ const Stories = () => {
       {/* Share Your Story CTA */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="bg-card rounded-3xl p-8 md:p-12 card-elevated border border-border/50 text-center max-w-2xl mx-auto">
-            <Send className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              {t('stories.share')}
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              {language === 'ta'
-                ? 'எங்கள் நிறுவனத்தில் படித்தீர்களா? உங்கள் அனுபவத்தை பகிருங்கள்!'
-                : 'Did you learn with us? Share your experience!'}
-            </p>
-            <Button size="lg" asChild>
-              <a href="/contact#enquiry-form">
-                {language === 'ta' ? 'கருத்து பகிர' : 'Share Feedback'}
-              </a>
-            </Button>
+          <div className="bg-card rounded-3xl p-8 md:p-12 card-elevated border border-border/50 max-w-3xl mx-auto">
+            {!showForm ? (
+              <div className="text-center">
+                <Send className="w-12 h-12 text-primary mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-foreground mb-4">
+                  {t('stories.share')}
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  {language === 'ta'
+                    ? 'எங்கள் நிறுவனத்தில் படித்தீர்களா? உங்கள் அனுபவத்தை பகிருங்கள்!'
+                    : 'Did you learn with us? Share your experience!'}
+                </p>
+                <Button size="lg" onClick={() => setShowForm(true)}>
+                  {language === 'ta' ? 'கருத்து பகிர' : 'Share Feedback'}
+                </Button>
+              </div>
+            ) : (
+              <div>
+                <h3 className="text-2xl font-bold text-foreground mb-2 text-center">
+                  {language === 'ta' ? 'உங்கள் அனுபவத்தை பகிருங்கள்' : 'Share Your Experience'}
+                </h3>
+                <p className="text-muted-foreground mb-6 text-center">
+                  {language === 'ta'
+                    ? 'உங்கள் கருத்துக்களை எங்களுடன் பகிர்ந்து கொள்ளுங்கள். இது மற்ற மாணவர்களுக்கு உதவும்.'
+                    : 'Share your feedback with us. This will help other students.'}
+                </p>
+                
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">
+                        {language === 'ta' ? 'பெயர்' : 'Name'}
+                      </Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        placeholder={language === 'ta' ? 'உங்கள் பெயர்' : 'Your Name'}
+                        required
+                      />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="location">
+                        {language === 'ta' ? 'இடம்' : 'Location'}
+                      </Label>
+                      <Input
+                        id="location"
+                        name="location"
+                        value={formData.location}
+                        onChange={handleInputChange}
+                        placeholder={language === 'ta' ? 'உங்கள் பகுதி (எ.கா: ஓமலூர், சேலம்)' : 'Your Area (e.g., Omalur, Salem)'}
+                        required
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="course">
+                      {language === 'ta' ? 'படிப்பு' : 'Course'}
+                    </Label>
+                    <Input
+                      id="course"
+                      name="course"
+                      value={formData.course}
+                      onChange={handleInputChange}
+                      placeholder={language === 'ta' ? 'நீங்கள் எடுத்த படிப்பு' : 'Course you took'}
+                      required
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="feedback">
+                      {language === 'ta' ? 'உங்கள் அனுபவம்' : 'Your Experience'}
+                    </Label>
+                    <Textarea
+                      id="feedback"
+                      name="feedback"
+                      value={formData.feedback}
+                      onChange={handleInputChange}
+                      placeholder={language === 'ta'
+                        ? 'உங்கள் அனுபவத்தை விவரமாக எழுதுங்கள்...'
+                        : 'Share your experience in detail...'}
+                      rows={5}
+                      required
+                    />
+                  </div>
+                  
+                  {submitMessage && (
+                    <div className="text-green-600 text-sm text-center p-3 bg-green-50 rounded-lg">
+                      {submitMessage}
+                    </div>
+                  )}
+                  
+                  <div className="flex gap-3">
+                    <Button 
+                      type="button" 
+                      variant="outline" 
+                      className="flex-1"
+                      onClick={() => setShowForm(false)}
+                    >
+                      {language === 'ta' ? 'ரத்து செய்' : 'Cancel'}
+                    </Button>
+                    <Button type="submit" className="flex-1" disabled={isSubmitting}>
+                      {isSubmitting
+                        ? (language === 'ta' ? 'அனுப்புகிறது...' : 'Submitting...')
+                        : (language === 'ta' ? 'கருத்தை அனுப்பு' : 'Submit Feedback')}
+                    </Button>
+                  </div>
+                </form>
+              </div>
+            )}
           </div>
         </div>
       </section>
